@@ -1,15 +1,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
     <Button
         android:id="@+id/buttonExecute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonDateDialog"
+        android:layout_below="@+id/buttonDateDialogHotel"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:onClick="runWorkflow"
         android:text="@string/button_run" />
 
     <TextView
@@ -25,11 +23,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/quartosLabel"
-        android:id="@+id/textViewDestination"
+        android:id="@+id/textViewDestinationH"
         android:labelFor="@+id/editTextDestination"
         android:layout_below="@+id/autoCompleteTextViewAirportsOrigin"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
 
 
     <TextView
@@ -50,20 +49,19 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/editTextDepartureDate"
-        android:editable="false"
         android:layout_below="@+id/autoCompleteTextViewAirportsDestination"
         android:layout_alignLeft="@+id/autoCompleteTextViewAirportsDestination"
         android:layout_alignStart="@+id/autoCompleteTextViewAirportsDestination"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:layout_toStartOf="@+id/buttonDateDialog"
-        android:layout_toLeftOf="@+id/buttonDateDialog" />
+        android:layout_toStartOf="@+id/buttonDateDialogHotel"
+        android:layout_toLeftOf="@+id/buttonDateDialogHotel" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/setDateButtonLabel"
-        android:id="@+id/buttonDateDialog"
+        android:id="@+id/buttonDateDialogHotel"
         android:onClick="showDatePickerDialog"
         android:layout_alignBottom="@+id/editTextDepartureDate"
         android:layout_alignParentRight="true"
@@ -77,7 +75,6 @@
         android:id="@+id/autoCompleteTextViewAirportsOrigin"
         android:layout_alignTop="@+id/textViewOrigin"
         android:layout_toRightOf="@+id/textViewOrigin"
-        android:layout_toStartOf="@+id/buttonExecute"
         android:completionThreshold="1"
         android:layout_alignRight="@+id/autoCompleteTextViewAirportsDestination"
         android:layout_alignEnd="@+id/autoCompleteTextViewAirportsDestination"
@@ -90,7 +87,7 @@
         android:layout_below="@+id/autoCompleteTextViewAirportsOrigin"
         android:layout_toRightOf="@+id/textViewDestination"
         android:completionThreshold="1"
-        android:layout_toLeftOf="@+id/buttonDateDialog"
-        android:layout_toStartOf="@+id/buttonDateDialog" />
+        android:layout_toLeftOf="@+id/buttonDateDialogHotel"
+        android:layout_toStartOf="@+id/buttonDateDialogHotel" />
 
 </RelativeLayout>

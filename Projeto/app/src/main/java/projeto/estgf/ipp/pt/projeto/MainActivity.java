@@ -23,11 +23,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-Button temp = (Button) findViewById(R.id.buttonVoo);
-Button temp1 =(Button)findViewById(R.id.buttonVooHotel);
-Button temp2 =(Button) findViewById(R.id.buttonHotel);
+        Button temp = (Button) findViewById(R.id.buttonVoo);
+        Button temp1 =(Button)findViewById(R.id.buttonVooHotel);
+        Button temp2 =(Button) findViewById(R.id.buttonHotel);
 
-    temp.setOnClickListener(this);
+        temp.setOnClickListener(this);
         temp1.setOnClickListener(this);
         temp2.setOnClickListener(this);
 
@@ -39,8 +39,8 @@ Button temp2 =(Button) findViewById(R.id.buttonHotel);
             Intent voo = new Intent(this,VooActivity.class);
             startActivity(voo);
         }else if (v.getId()==R.id.buttonHotel){
-            //Intent hotel = new Intent(this,HoteActivity.class);
-            //startActivity(hotel);
+            Intent hotel = new Intent(this,HotelActivity.class);
+            startActivity(hotel);
         }else if(v.getId()==R.id.buttonVooHotel){
             Intent vooHotel = new Intent(this,VooHotelActivity.class);
             startActivity(vooHotel);
