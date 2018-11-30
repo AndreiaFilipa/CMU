@@ -2,9 +2,11 @@ package projeto.estgf.ipp.pt.projeto;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 
@@ -12,7 +14,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
 
@@ -21,28 +23,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+Button temp = (Button) findViewById(R.id.buttonVoo);
+Button temp1 =(Button)findViewById(R.id.buttonVooHotel);
+Button temp2 =(Button) findViewById(R.id.buttonHotel);
+
+    temp.setOnClickListener(this);
+        temp1.setOnClickListener(this);
+        temp2.setOnClickListener(this);
 
     }
 
-
-    public void showDatePickerDialog(View v) {
-        Calendar cal = Calendar.getInstance();
-        AlertDialog newFragment = new DatePickerDialog(this,
-                new DatePickerDialog.OnDateSetListener() {
-
-                    @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                        Calendar cal = Calendar.getInstance();
-                        cal.set(Calendar.YEAR, year);
-                        cal.set(Calendar.MONTH, monthOfYear);
-                        cal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        DateFormat sdf = SimpleDateFormat.getDateInstance();
-                        EditText departureDate = (EditText) findViewById(R.id.editTextDepartureDate);
-                        departureDate.setText(sdf.format(cal.getTime()));
-                    }
-                }, cal.get(Calendar.YEAR),
-                cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
-        newFragment.show();
-
+    @Override
+    public void onClick(View v) {
+        if(v.getId()==R.id.buttonVoo){
+            Intent voo = new Intent(this,VooActivity.class);
+            startActivity(voo);
+        }else if (v.getId()==R.id.buttonHotel){
+            //Intent hotel = new Intent(this,HoteActivity.class);
+            //startActivity(hotel);
+        }else if(v.getId()==R.id.buttonVooHotel){
+            Intent vooHotel = new Intent(this,VooHotelActivity.class);
+            startActivity(vooHotel);
+        }
     }
 }
