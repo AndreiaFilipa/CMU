@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".VooHotelActivity" />
-        <activity android:name=".VooActivity"></activity>
+        <activity android:name=".VooActivity" />
+        <activity android:name=".HotelActivity" />
     </application>
 
 </manifest>

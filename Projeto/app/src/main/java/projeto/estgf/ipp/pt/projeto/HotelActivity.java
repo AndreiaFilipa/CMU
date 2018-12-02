@@ -15,19 +15,21 @@ import java.util.Calendar;
 
 public class HotelActivity extends AppCompatActivity implements View.OnClickListener {
     private Button temp;
+    private Button temp1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
 
-        temp = (Button) findViewById(R.id.buttonDateDialogHotel);
+        temp = (Button) findViewById(R.id.buttonChegada);
         temp.setOnClickListener(this);
+        temp1 = (Button) findViewById(R.id.buttonPartida);
+        temp1.setOnClickListener(this);
     }
 
 
-    public void showDatePickerDialog(View v) {
-
+    public void showDatePickerDialog(View v, final int TextViewID) {
         Calendar cal = Calendar.getInstance();
         AlertDialog newFragment = new DatePickerDialog(this,
                 new DatePickerDialog.OnDateSetListener() {
@@ -39,19 +41,19 @@ public class HotelActivity extends AppCompatActivity implements View.OnClickList
                         cal.set(Calendar.MONTH, monthOfYear);
                         cal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
                         DateFormat sdf = SimpleDateFormat.getDateInstance();
-                        EditText departureDate = (EditText) findViewById(R.id.editTextDepartureDate);
+                        EditText departureDate = (EditText) findViewById(TextViewID);
                         departureDate.setText(sdf.format(cal.getTime()));
-
                     }
                 }, cal.get(Calendar.YEAR),
                 cal.get(Calendar.MONTH), cal.get(Calendar.DAY_OF_MONTH));
         newFragment.show();
-
     }
 
     public void onClick(View v) {
-        if(v.getId() == R.id.buttonDateDialogHotel){
-            showDatePickerDialog(v);
+        if(v.getId() == R.id.buttonChegada){
+            showDatePickerDialog(v,R.id.editTextChegada);
+        }else if(v.getId() == R.id.buttonPartida){
+            showDatePickerDialog(v,R.id.editTextPartida);
         }
     }
 

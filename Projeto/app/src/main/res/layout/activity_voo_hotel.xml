@@ -17,8 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextOrigin"
-        android:inputType="text"
-         />
+        android:inputType="text" />
 
 
 
@@ -93,7 +92,7 @@
 
     <EditText
         android:id="@+id/quartos"
-        android:hint="@string/quartosLabel"
+        android:hint="Quartos/Hospédes"
         android:inputType="numberSigned"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

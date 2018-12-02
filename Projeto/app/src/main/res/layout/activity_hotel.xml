@@ -2,92 +2,94 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/buttonExecute"
-        android:layout_width="wrap_content"
+
+    <AutoCompleteTextView
+
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonDateDialogHotel"
-        android:layout_centerHorizontal="true"
-        android:text="@string/button_run" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/destinoHotelLabel"
-        android:id="@+id/textViewOrigin"
-        android:labelFor="@+id/editTextOrigin"
-        android:layout_alignRight="@+id/textViewDestination"
-        android:layout_alignEnd="@+id/textViewDestination" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/quartosLabel"
-        android:id="@+id/textViewDestinationH"
-        android:labelFor="@+id/editTextDestination"
-        android:layout_below="@+id/autoCompleteTextViewAirportsOrigin"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/departureDateLabel"
-        android:id="@+id/textViewDepartureDate"
-        android:labelFor="@+id/editTextDepartureDate"
-        android:layout_below="@+id/autoCompleteTextViewAirportsDestination"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_toLeftOf="@+id/editTextDepartureDate"
-        android:layout_toStartOf="@+id/editTextDepartureDate" />
+        android:id="@+id/autoCompleteTextViewOrigem"
+        android:completionThreshold="1"
+        android:labelFor="@+id/editTextOrigin"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:hint="Cidade Destino"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editTextOrigin"
+        android:inputType="text" />
+
+
+
+    <EditText
+        android:hint="Data Chegada"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="date"
         android:ems="10"
-        android:id="@+id/editTextDepartureDate"
-        android:layout_below="@+id/autoCompleteTextViewAirportsDestination"
-        android:layout_alignLeft="@+id/autoCompleteTextViewAirportsDestination"
-        android:layout_alignStart="@+id/autoCompleteTextViewAirportsDestination"
+        android:id="@+id/editTextChegada"
+        android:layout_below="@+id/autoCompleteTextViewOrigem"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:layout_toStartOf="@+id/buttonDateDialogHotel"
-        android:layout_toLeftOf="@+id/buttonDateDialogHotel" />
+        android:layout_toStartOf="@+id/buttonChegada"
+        android:layout_toLeftOf="@+id/buttonChegada" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/setDateButtonLabel"
-        android:id="@+id/buttonDateDialogHotel"
-        android:onClick="showDatePickerDialog"
-        android:layout_alignBottom="@+id/editTextDepartureDate"
+        android:text="Set Date"
+        android:id="@+id/buttonChegada"
+        android:layout_alignBottom="@+id/editTextChegada"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
 
+    <EditText
+        android:hint="Data Partida"
+        android:id="@+id/editTextPartida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextChegada"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_toStartOf="@+id/buttonPartida"
+        android:layout_toLeftOf="@+id/buttonPartida"
+        android:ems="10"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:inputType="date" />
 
-    <AutoCompleteTextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/autoCompleteTextViewAirportsOrigin"
-        android:layout_alignTop="@+id/textViewOrigin"
-        android:layout_toRightOf="@+id/textViewOrigin"
-        android:completionThreshold="1"
-        android:layout_alignRight="@+id/autoCompleteTextViewAirportsDestination"
-        android:layout_alignEnd="@+id/autoCompleteTextViewAirportsDestination"
-        android:layout_toEndOf="@+id/textViewOrigin" />
+        android:text="Set Date"
+        android:id="@+id/buttonPartida"
+        android:layout_alignBottom="@+id/editTextPartida"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/buttonChegada"/>
 
-    <AutoCompleteTextView
+
+
+    <EditText
+        android:id="@+id/quartosH"
+        android:hint="Quartos/Hospédes"
+        android:inputType="numberSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextPartida"/>
+
+    <Button
+        android:id="@+id/buttonExecute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/autoCompleteTextViewAirportsDestination"
-        android:layout_below="@+id/autoCompleteTextViewAirportsOrigin"
-        android:layout_toRightOf="@+id/textViewDestination"
-        android:completionThreshold="1"
-        android:layout_toLeftOf="@+id/buttonDateDialogHotel"
-        android:layout_toStartOf="@+id/buttonDateDialogHotel" />
+        android:layout_below="@+id/quartosH"
+        android:layout_centerHorizontal="true"
+        android:text="Pesquisar"
+        />
+
+
+
+
+
 
 </RelativeLayout>
