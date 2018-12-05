@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         if(v.getId()==R.id.buttonVoo){
-            Intent voo = new Intent(this,VooActivity.class);
+            Intent voo = new Intent(this,Main2Activity.class);
             startActivity(voo);
         }else if (v.getId()==R.id.buttonHotel){
             Intent hotel = new Intent(this,HotelActivity.class);

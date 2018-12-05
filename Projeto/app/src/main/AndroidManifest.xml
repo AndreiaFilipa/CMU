@@ -17,8 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".VooHotelActivity" />
-        <activity android:name=".VooActivity" />
         <activity android:name=".HotelActivity" />
+        <activity
+            android:name=".Main2Activity"
+            android:label="@string/title_activity_main2"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
