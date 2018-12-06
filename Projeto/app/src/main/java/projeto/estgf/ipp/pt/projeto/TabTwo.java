@@ -29,7 +29,6 @@ public class TabTwo extends Fragment implements View.OnClickListener{
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         this.context = getActivity();
 
     }
@@ -70,6 +69,7 @@ public class TabTwo extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.tab_two, container, false);
+
         String[] aeroporto = getResources().getStringArray(R.array.airports);
         ArrayAdapter<String> originAirportsAdapter = new ArrayAdapter<String>(context, R.layout.support_simple_spinner_dropdown_item, aeroporto);
         ArrayAdapter<String> destinationAirportsAdapter = new ArrayAdapter<String>(context, R.layout.support_simple_spinner_dropdown_item, aeroporto);
@@ -80,6 +80,7 @@ public class TabTwo extends Fragment implements View.OnClickListener{
 
         temp = (Button) view.findViewById(R.id.buttonDateDialog);
         temp.setOnClickListener(this);
+
         return view;
     }
 

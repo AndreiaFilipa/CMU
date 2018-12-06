@@ -5,44 +5,31 @@
 
 
     <AutoCompleteTextView
-
+        android:hint="@string/originLabel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/autoCompleteTextViewAirportsOrigin1"
         android:completionThreshold="1"
-        android:labelFor="@+id/editTextOrigin"/>
-
-    <EditText
-        android:hint="Origem"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextOrigin"
-        android:inputType="text" />
-
-
-
-    <AutoCompleteTextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/autoCompleteTextViewAirportsDestination1"
-        android:completionThreshold="1"
-        android:labelFor="@+id/editTextOrigin"
-        android:layout_below="@+id/autoCompleteTextViewAirportsOrigin1"/>
-
-    <EditText
-        android:hint="Destino"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/editTextDestination"
-        android:inputType="text"
-        android:layout_below="@+id/editTextOrigin"
         />
 
 
 
+
+
+    <AutoCompleteTextView
+    android:hint="@string/destinationLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/autoCompleteTextViewAirportsDestination1"
+        android:completionThreshold="1"
+        android:layout_below="@+id/autoCompleteTextViewAirportsOrigin1"/>
+
+
+
+
+
     <EditText
-        android:hint="Data de partida"
+        android:hint="@string/data_de_partida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="date"
@@ -66,7 +53,7 @@
 
 
     <EditText
-        android:hint="Data de regresso"
+        android:hint="@string/data_de_regresso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="date"
@@ -90,14 +77,21 @@
         android:layout_below="@+id/buttonDateDialogDeparture"/>
 
 
-
     <EditText
-        android:id="@+id/quartos"
-        android:hint="Quartos/Hospédes"
+        android:id="@+id/passageiros1"
+        android:hint="@string/passageiros"
         android:inputType="numberSigned"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/editTextArriveDate"/>
+
+    <EditText
+        android:id="@+id/quartos"
+        android:hint="@string/quartos_hosp_des"
+        android:inputType="numberSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passageiros1"/>
 
     <Button
         android:id="@+id/buttonExecute"

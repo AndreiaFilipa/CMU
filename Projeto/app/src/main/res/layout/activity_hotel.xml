@@ -12,7 +12,7 @@
         android:labelFor="@+id/editTextOrigin"/>
 
     <EditText
-        android:hint="Cidade Destino"
+        android:hint="@string/cid_destino"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/editTextOrigin"
@@ -21,7 +21,7 @@
 
 
     <EditText
-        android:hint="Data Chegada"
+        android:hint="@string/data_check_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="date"
@@ -36,7 +36,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Set Date"
+        android:text="@string/setDateButtonLabel"
         android:id="@+id/buttonChegada"
         android:layout_alignBottom="@+id/editTextChegada"
         android:layout_alignParentRight="true"
@@ -44,7 +44,7 @@
 
 
     <EditText
-        android:hint="Data Partida"
+        android:hint="@string/data_check_out"
         android:id="@+id/editTextPartida"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Set Date"
+        android:text="@string/setDateButtonLabel"
         android:id="@+id/buttonPartida"
         android:layout_alignBottom="@+id/editTextPartida"
         android:layout_alignParentRight="true"
@@ -72,7 +72,7 @@
 
     <EditText
         android:id="@+id/quartosH"
-        android:hint="Quartos/Hospédes"
+        android:hint="@string/quartos_hosp_des"
         android:inputType="numberSigned"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/quartosH"
         android:layout_centerHorizontal="true"
-        android:text="Pesquisar"
+        android:text="@string/pesquisar"
         />
 
 
