@@ -10,11 +10,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-=======
->>>>>>> 833f06d17ad22c3ea4cf4126391e3918e5a45bb2
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -74,7 +71,6 @@ public class TabOne extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.tab_one, container, false);
 
-<<<<<<< HEAD
         String[] aeroporto = getResources().getStringArray(R.array.airports);
         ArrayAdapter<String> originAirportsAdapter = new ArrayAdapter<String>(context, R.layout.support_simple_spinner_dropdown_item, aeroporto);
         ArrayAdapter<String> destinationAirportsAdapter = new ArrayAdapter<String>(context, R.layout.support_simple_spinner_dropdown_item, aeroporto);
@@ -83,8 +79,6 @@ public class TabOne extends Fragment implements View.OnClickListener {
         origins.setAdapter(originAirportsAdapter);
         destinations.setAdapter(destinationAirportsAdapter);
 
-=======
->>>>>>> 833f06d17ad22c3ea4cf4126391e3918e5a45bb2
 
         temp = (Button) view.findViewById(R.id.buttonDateDialogDepartureVoo);
         temp.setOnClickListener(this);
