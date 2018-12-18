@@ -13,7 +13,7 @@ import retrofit2.Response;
 public class ResultsVoos {
 
     private Rotas rotas;
-    private List<Data> lista;
+    private Data lista;
     private Context contexto;
 
     public ResultsVoos (Context contexto) {
@@ -23,15 +23,15 @@ public class ResultsVoos {
     }
 
     public void resultados (String origin, String destination, String departureDate, String returnDate, int adults) {
-        Call<List<Data>> resposta = rotas.searchFlights(origin, destination, departureDate, returnDate, adults);
-        resposta.enqueue(new Callback<List<Data>>() {
+        Call<Data> resposta = rotas.searchFlights(origin, destination, departureDate, returnDate, adults);
+        resposta.enqueue(new Callback<Data>() {
             @Override
-            public void onResponse(Call<List<Data>> call, Response<List<Data>> response) {
+            public void onResponse(Call<Data> call, Response<Data> response) {
                 lista = response.body();
             }
 
             @Override
-            public void onFailure(Call<List<Data>> call, Throwable t) {
+            public void onFailure(Call<Data> call, Throwable t) {
                 t.printStackTrace();
             }
         });
