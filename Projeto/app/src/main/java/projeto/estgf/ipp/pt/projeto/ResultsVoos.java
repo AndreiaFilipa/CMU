@@ -15,10 +15,12 @@ public class ResultsVoos {
     private Rotas rotas;
     private Data lista;
     private Context contexto;
+    private ResultAdapter adapter;
 
-    public ResultsVoos (Context contexto) {
+    public ResultsVoos (Context contexto,ResultAdapter adapter) {
         this.contexto = contexto;
         this.rotas=ControladoresAPI.getRotas();
+        this.adapter=adapter;
 
     }
 
@@ -28,6 +30,10 @@ public class ResultsVoos {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
                 lista = response.body();
+
+                if(lista != null && lista.getData().size()>0){
+                    adapter.addItems(lista.getData());
+                }
             }
 
             @Override

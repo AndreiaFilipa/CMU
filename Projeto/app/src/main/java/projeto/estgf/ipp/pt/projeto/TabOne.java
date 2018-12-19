@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -24,6 +25,7 @@ import java.util.Calendar;
 public class TabOne extends Fragment implements View.OnClickListener {
     private Button temp;
     private Button temp1;
+    private Button temp2;
     private Context context;
 
 
@@ -62,6 +64,9 @@ public class TabOne extends Fragment implements View.OnClickListener {
             showDatePickerDialog(v,R.id.editTextDepartureDateVoo);
         }else if(v.getId() == R.id.buttonDateDialogArriveVoo){
             showDatePickerDialog(v, R.id.editTextArriveDateVoo);
+        }else if (v.getId()== R.id.buttonExecute){
+            Intent pesquisa = new Intent(context,PesquisaActivity.class);
+            startActivity(pesquisa);
         }
     }
 
@@ -84,6 +89,8 @@ public class TabOne extends Fragment implements View.OnClickListener {
         temp.setOnClickListener(this);
         temp1 = (Button) view.findViewById(R.id.buttonDateDialogArriveVoo);
         temp1.setOnClickListener(this);
+        temp2 = (Button) view.findViewById(R.id.buttonExecute);
+        temp2.setOnClickListener(this);
 
         return view;
     }
