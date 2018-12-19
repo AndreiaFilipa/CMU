@@ -11,8 +11,8 @@ import retrofit2.http.Query;
 public interface Rotas {
 
     @Headers("Authorization: Bearer hKCJiBu7kjgQx7VUliqdjXnyKpMu")
-    @GET("/shopping/flight-offers")
-    Call<List<Data>> searchFlights (@Query("origin") String origin, @Query("destination") int destination, @Query("departureDate") int departureDate, @Query("returnDate") int returnDate, @Query("adults") int adults);
+    @GET("shopping/flight-offers")
+    Call<Data> searchFlights (@Query("origin") String origin, @Query("destination") String destination, @Query("departureDate") String departureDate, @Query("returnDate") String returnDate, @Query("adults") int adults);
 
 
 
