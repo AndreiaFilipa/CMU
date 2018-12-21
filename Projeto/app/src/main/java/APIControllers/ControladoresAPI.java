@@ -44,10 +44,6 @@ public class ControladoresAPI {
 
     public static String getToken(){
         if(token != null){
-
-
-
-
             return "Bearer " +token.getAccess_token();
         }else{
             return null;

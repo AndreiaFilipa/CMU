@@ -1,4 +1,4 @@
-package projeto.estgf.ipp.pt.projeto;
+package Hoteis;
 
 import android.content.Context;
 import APIControllers.ControladoresAPI;
@@ -7,27 +7,25 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class ResultsVoos {
-
+public class ResultsHoteis {
     private Rotas rotas;
-    private Data lista;
+    private DataHoteis lista;
     private Context contexto;
-    private ResultAdapter adapter;
+    private ResultAdapterHoteis adapter;
 
-    public ResultsVoos (Context contexto,ResultAdapter adapter) {
+    public ResultsHoteis(Context contexto,ResultAdapterHoteis adapter) {
         this.contexto = contexto;
         this.rotas=ControladoresAPI.getRotas();
-
         this.adapter=adapter;
 
     }
 
-    public void resultados (String origin, String destination, String departureDate, String returnDate, int adults) {
+    public void resultados (String cityCode, String checkInDate, String checkOutDate, int adults) {
 
-        Call<Data> resposta = rotas.searchFlights(ControladoresAPI.getToken(),origin, destination, departureDate, returnDate, adults);
-        resposta.enqueue(new Callback<Data>() {
+        Call<DataHoteis> resposta = rotas.searchHoteis(ControladoresAPI.getToken(), cityCode, checkInDate, checkOutDate, adults);
+        resposta.enqueue(new Callback<DataHoteis>() {
             @Override
-            public void onResponse(Call<Data> call, Response<Data> response) {
+            public void onResponse(Call<DataHoteis> call, Response<DataHoteis> response) {
                 lista = response.body();
 
                 if(lista != null && lista.getData().size()>0){
@@ -36,17 +34,10 @@ public class ResultsVoos {
             }
 
             @Override
-            public void onFailure(Call<Data> call, Throwable t) {
+            public void onFailure(Call<DataHoteis> call, Throwable t) {
                 t.printStackTrace();
             }
         });
 
     }
-
-
-
-
-
-
-
 }

@@ -4,21 +4,12 @@
 
 
     <AutoCompleteTextView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/autoCompleteTextViewOrigem"
-        android:completionThreshold="1"
-        android:labelFor="@+id/editTextOrigin"/>
-
-    <EditText
         android:hint="@string/cid_destino"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/editTextOrigin"
-        android:inputType="text" />
-
-
+        android:id="@+id/autoCompleteTextViewOrigemHotel"
+        android:completionThreshold="1"
+       />
 
     <EditText
         android:hint="@string/data_check_in"
@@ -27,7 +18,7 @@
         android:inputType="date"
         android:ems="10"
         android:id="@+id/editTextChegada"
-        android:layout_below="@+id/autoCompleteTextViewOrigem"
+        android:layout_below="@+id/autoCompleteTextViewOrigemHotel"
         android:focusable="false"
         android:focusableInTouchMode="false"
         android:layout_toStartOf="@+id/buttonChegada"
@@ -79,17 +70,13 @@
         android:layout_below="@+id/editTextPartida"/>
 
     <Button
-        android:id="@+id/buttonExecute"
+        android:id="@+id/buttonExecuteH"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/quartosH"
         android:layout_centerHorizontal="true"
         android:text="@string/pesquisar"
         />
-
-
-
-
 
 
 </RelativeLayout>
