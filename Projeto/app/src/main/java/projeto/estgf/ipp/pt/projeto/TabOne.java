@@ -28,13 +28,31 @@ public class TabOne extends Fragment implements View.OnClickListener {
     private Button temp2;
     private Context context;
 
+    private String[] aeroporto;
+
+    private ArrayAdapter<String> originAirportsAdapter;
+    private ArrayAdapter<String> destinationAirportsAdapter;
+
+    IdaRegressoVoo TextV1;
+
+    AutoCompleteTextView origins ;
+    AutoCompleteTextView destinations ;
+    EditText editT3;
+    EditText editT4;
+    EditText editT5;
+
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.context = getActivity();
 
+
+
+
     }
+
 
 
     public void showDatePickerDialog(View v, final int TextViewID) {
@@ -48,7 +66,7 @@ public class TabOne extends Fragment implements View.OnClickListener {
                         cal.set(Calendar.YEAR, year);
                         cal.set(Calendar.MONTH, monthOfYear);
                         cal.set(Calendar.DAY_OF_MONTH, dayOfMonth);
-                        DateFormat sdf = SimpleDateFormat.getDateInstance();
+                        DateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                         EditText departureDate = (EditText) ((Activity)context).findViewById(TextViewID);
                         departureDate.setText(sdf.format(cal.getTime()));
                     }
@@ -66,6 +84,19 @@ public class TabOne extends Fragment implements View.OnClickListener {
             showDatePickerDialog(v, R.id.editTextArriveDateVoo);
         }else if (v.getId()== R.id.buttonExecute){
             Intent pesquisa = new Intent(context,PesquisaActivity.class);
+
+
+
+
+            IdaRegressoVoo TextV1 = new IdaRegressoVoo();
+            TextV1.setOrigem(origins.getText().toString());
+            TextV1.setDestino(destinations.getText().toString());
+            TextV1.setDataPartida(editT3.getText().toString());
+            TextV1.setDataRegresso(editT4.getText().toString());
+            TextV1.setPassageiros(editT5.getText().toString());
+
+            pesquisa.putExtra("Resultados",TextV1);
+
             startActivity(pesquisa);
         }
     }
@@ -76,14 +107,18 @@ public class TabOne extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater,ViewGroup container,Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.tab_one, container, false);
 
-        String[] aeroporto = getResources().getStringArray(R.array.airports);
-        ArrayAdapter<String> originAirportsAdapter = new ArrayAdapter<String>(context, R.layout.support_simple_spinner_dropdown_item, aeroporto);
-        ArrayAdapter<String> destinationAirportsAdapter = new ArrayAdapter<String>(context, R.layout.support_simple_spinner_dropdown_item, aeroporto);
-        AutoCompleteTextView origins = (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextViewAirportsOriginVoo);
-        AutoCompleteTextView destinations = (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextViewAirportsDestinationVoo);
+        aeroporto = getResources().getStringArray(R.array.airports);
+        originAirportsAdapter = new ArrayAdapter<String>(context, R.layout.support_simple_spinner_dropdown_item, aeroporto);
+        destinationAirportsAdapter = new ArrayAdapter<String>(context, R.layout.support_simple_spinner_dropdown_item, aeroporto);
+        origins = (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextViewAirportsOriginVoo);
+        destinations = (AutoCompleteTextView) view.findViewById(R.id.autoCompleteTextViewAirportsDestinationVoo);
         origins.setAdapter(originAirportsAdapter);
         destinations.setAdapter(destinationAirportsAdapter);
 
+
+        editT3 = (EditText) view.findViewById(R.id.editTextDepartureDateVoo);
+        editT4 = (EditText) view.findViewById(R.id.editTextArriveDateVoo);
+        editT5 = (EditText) view.findViewById(R.id.passageiros);
 
         temp = (Button) view.findViewById(R.id.buttonDateDialogDepartureVoo);
         temp.setOnClickListener(this);

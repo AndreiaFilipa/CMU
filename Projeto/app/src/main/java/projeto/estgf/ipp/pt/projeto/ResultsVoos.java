@@ -2,6 +2,7 @@ package projeto.estgf.ipp.pt.projeto;
 
 import android.content.Context;
 
+import java.util.HashMap;
 import java.util.List;
 
 import APIControllers.ControladoresAPI;
@@ -20,12 +21,14 @@ public class ResultsVoos {
     public ResultsVoos (Context contexto,ResultAdapter adapter) {
         this.contexto = contexto;
         this.rotas=ControladoresAPI.getRotas();
+
         this.adapter=adapter;
 
     }
 
     public void resultados (String origin, String destination, String departureDate, String returnDate, int adults) {
-        Call<Data> resposta = rotas.searchFlights(origin, destination, departureDate, returnDate, adults);
+
+        Call<Data> resposta = rotas.searchFlights(ControladoresAPI.getToken(),origin, destination, departureDate, returnDate, adults);
         resposta.enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
@@ -43,6 +46,11 @@ public class ResultsVoos {
         });
 
     }
+
+
+
+
+
 
 
 }
