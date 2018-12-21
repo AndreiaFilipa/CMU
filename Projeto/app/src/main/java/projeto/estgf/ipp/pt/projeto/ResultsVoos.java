@@ -27,8 +27,8 @@ public class ResultsVoos {
     }
 
     public void resultados (String origin, String destination, String departureDate, String returnDate, int adults) {
-        getTokenFromInternet();
-        Call<Data> resposta = rotas.searchFlights("aaa",origin, destination, departureDate, returnDate, adults);
+
+        Call<Data> resposta = rotas.searchFlights(ControladoresAPI.getToken(),origin, destination, departureDate, returnDate, adults);
         resposta.enqueue(new Callback<Data>() {
             @Override
             public void onResponse(Call<Data> call, Response<Data> response) {
@@ -50,30 +50,7 @@ public class ResultsVoos {
 
 
 
-    private void getTokenFromInternet(){
-        HashMap<String, String> x = new HashMap<>();
-        x.put("client_id","F6S9EKulXA3pAGduv0miIlvHVLNQeG1u");
 
-        x.put("client_secret","WK1CGi5OQBpeOjeo");
-
-        x.put("grant_type","client_credentials");
-
-        Call<Token> resposta = rotas.getToken(x);
-        resposta.enqueue(new Callback<Token>() {
-            @Override
-            public void onResponse(Call<Token> call, Response<Token> response) {
-               Token token = response.body();
-              //  ready = true;
-
-            }
-
-            @Override
-            public void onFailure(Call<Token> call, Throwable t) {
-                t.printStackTrace();
-              //  ready = true;
-            }
-        });
-    }
 
 
 }

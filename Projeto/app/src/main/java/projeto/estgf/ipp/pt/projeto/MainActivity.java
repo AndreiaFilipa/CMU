@@ -14,6 +14,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import APIControllers.ControladoresAPI;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
 
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         temp.setOnClickListener(this);
         temp1.setOnClickListener(this);
         temp2.setOnClickListener(this);
+
+        ControladoresAPI.x();
+
 
     }
 

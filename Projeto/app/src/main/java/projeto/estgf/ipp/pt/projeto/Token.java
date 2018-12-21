@@ -2,7 +2,7 @@ package projeto.estgf.ipp.pt.projeto;
 
 public class Token {
     private int expires_in;
-    private String acess_token;
+    private String access_token;
 
     public int getExpires_in() {
         return expires_in;
@@ -12,11 +12,12 @@ public class Token {
         this.expires_in = expires_in;
     }
 
-    public String getAcess_token() {
-        return acess_token;
+    public String getAccess_token() {
+        return access_token;
     }
 
-    public void setAcess_token(String acess_token) {
-        this.acess_token = acess_token;
+    public void setAccess_token(String access_token) {
+        this.access_token = access_token;
     }
 }
+

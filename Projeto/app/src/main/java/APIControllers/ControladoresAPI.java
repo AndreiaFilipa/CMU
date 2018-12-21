@@ -16,6 +16,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+
 public class ControladoresAPI {
 
     private static Retrofit retrofit;
@@ -34,10 +35,49 @@ public class ControladoresAPI {
             retrofit = new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create(gson)).build();
 
             rotas = retrofit.create(Rotas.class);
+
+
         }
 
         return rotas;
     }
 
+    public static String getToken(){
+        if(token != null){
+
+
+
+
+            return "Bearer " +token.getAccess_token();
+        }else{
+            return null;
+        }
+
+    }
+
+    public static void x(){
+        getRotas();
+        Call<Token> resposta = rotas.getToken("F6S9EKulXA3pAGduv0miIlvHVLNQeG1u","WK1CGi5OQBpeOjeo","client_credentials");
+        resposta.enqueue(new Callback<Token>() {
+            @Override
+            public void onResponse(Call<Token> call, Response<Token> response) {
+                token = response.body();
+                ready = true;
+
+            }
+
+            @Override
+            public void onFailure(Call<Token> call, Throwable t) {
+                t.printStackTrace();
+                ready = true;
+            }
+        });
+    }
+
+    public static boolean isReady(){
+        return ready;
+    }
+
 
 }
+
