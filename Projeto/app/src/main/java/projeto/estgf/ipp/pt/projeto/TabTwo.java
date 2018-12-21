@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -23,8 +24,15 @@ import java.util.Calendar;
 
 public class TabTwo extends Fragment implements View.OnClickListener{
     private Button temp;
+    private Button temp2;
     private Context context;
 
+    IdaRegressoVoo Input;
+
+    AutoCompleteTextView origins ;
+    AutoCompleteTextView destinations ;
+    EditText editT3;
+    EditText editT4;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,6 +69,18 @@ public class TabTwo extends Fragment implements View.OnClickListener{
     public void onClick(View v) {
         if(v.getId() == R.id.buttonDateDialog){
             showDatePickerDialog(v);
+        }else if(v.getId() == R.id.buttonExecuteIda){
+            Intent pesquisa = new Intent(context,PesquisaActivity.class);
+
+            Input = new IdaRegressoVoo();
+            Input.setOrigem(origins.getText().toString());
+            Input.setDestino(destinations.getText().toString());
+            Input.setDataPartida(editT3.getText().toString());
+            Input.setPassageiros(editT4.getText().toString());
+
+            pesquisa.putExtra("Resultados",Input);
+
+            startActivity(pesquisa);
 
         }
     }
@@ -80,6 +100,12 @@ public class TabTwo extends Fragment implements View.OnClickListener{
 
         temp = (Button) view.findViewById(R.id.buttonDateDialog);
         temp.setOnClickListener(this);
+
+        editT3 = (EditText) view.findViewById(R.id.editTextDepartureDateVoo);
+        editT4 = (EditText) view.findViewById(R.id.passageiros_tabtwo);
+
+        temp2 = (Button) view.findViewById(R.id.buttonExecuteIda);
+        temp2.setOnClickListener(this);
 
         return view;
     }

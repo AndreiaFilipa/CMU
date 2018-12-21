@@ -51,7 +51,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_run"
-        android:id="@+id/buttonExecute"
+        android:id="@+id/buttonExecuteIda"
         android:layout_below="@+id/passageiros_tabtwo"
         android:layout_centerHorizontal="true" />
 
