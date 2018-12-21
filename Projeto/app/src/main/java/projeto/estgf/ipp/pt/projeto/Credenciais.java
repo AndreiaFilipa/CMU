@@ -1,7 +1,5 @@
 package projeto.estgf.ipp.pt.projeto;
 
-
-
 public class Credenciais {
 
    public  String client_id;

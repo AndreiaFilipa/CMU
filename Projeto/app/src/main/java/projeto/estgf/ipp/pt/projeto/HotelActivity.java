@@ -2,30 +2,68 @@ package projeto.estgf.ipp.pt.projeto;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import Hoteis.ProcuraHotel;
+
 public class HotelActivity extends AppCompatActivity implements View.OnClickListener {
     private Button temp;
     private Button temp1;
+    private Button temp2;
+    private Context context;
+
+    private String[] aeroporto;
+
+    private ArrayAdapter<String> originAirportsAdapter;
+
+    ProcuraHotel TextV1;
+
+    AutoCompleteTextView origins;
+    EditText editT3;
+    EditText editT4;
+    EditText editT5;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hotel);
+        context=this;
+
+
+        aeroporto = getResources().getStringArray(R.array.airports);
+        originAirportsAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, aeroporto);
+        origins = (AutoCompleteTextView) findViewById(R.id.autoCompleteTextViewOrigemHotel);
+        origins.setAdapter(originAirportsAdapter);
+
+
+        editT3 = (EditText) findViewById(R.id.editTextChegada);
+        editT4 = (EditText)findViewById(R.id.editTextPartida);
+        editT5 = (EditText) findViewById(R.id.quartosH);
 
         temp = (Button) findViewById(R.id.buttonChegada);
         temp.setOnClickListener(this);
         temp1 = (Button) findViewById(R.id.buttonPartida);
         temp1.setOnClickListener(this);
+        temp2 = (Button) findViewById(R.id.buttonExecuteH);
+        temp2.setOnClickListener(this);
+
     }
 
 
@@ -49,12 +87,33 @@ public class HotelActivity extends AppCompatActivity implements View.OnClickList
         newFragment.show();
     }
 
+    @Override
     public void onClick(View v) {
         if(v.getId() == R.id.buttonChegada){
             showDatePickerDialog(v,R.id.editTextChegada);
         }else if(v.getId() == R.id.buttonPartida){
             showDatePickerDialog(v,R.id.editTextPartida);
+        } else if (v.getId()== R.id.buttonExecuteH){
+            Intent pesquisa = new Intent(context,PesquisaActivity.class);
+
+
+            ProcuraHotel TextV1 = new ProcuraHotel();
+            TextV1.setCidadeDestino(origins.getText().toString());
+            TextV1.setDataCheckIn(editT3.getText().toString());
+            TextV1.setDataCheckOut(editT4.getText().toString());
+            TextV1.setHospedes(editT5.getText().toString());
+
+            pesquisa.putExtra("Resultados",TextV1);
+
+
+            
+            startActivity(pesquisa);
         }
     }
+
+
+
+
+
 
 }

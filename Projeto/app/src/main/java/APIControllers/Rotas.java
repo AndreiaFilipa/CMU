@@ -3,6 +3,7 @@ package APIControllers;
 import java.util.HashMap;
 import java.util.List;
 
+import Hoteis.DataHoteis;
 import projeto.estgf.ipp.pt.projeto.Credenciais;
 import projeto.estgf.ipp.pt.projeto.Data;
 import projeto.estgf.ipp.pt.projeto.Token;
@@ -26,9 +27,14 @@ public interface Rotas {
 //    @POST("security/oauth2/token")
 //    Call<Token> getToken(@Body HashMap<String, String> x);
 
+    @GET("shopping/hotel-offers")
+    Call<DataHoteis> searchHoteis (@Header("Authorization") String token, @Query("cityCode") String cityCode, @Query("checkInDate") String checkInDate, @Query("checkOutDate") String checkOutDate, @Query("adults") int adults);
+
     @FormUrlEncoded
     @POST("security/oauth2/token")
     Call<Token> getToken(@Field("client_id") String x,@Field("client_secret") String y,@Field("grant_type") String z);
+
+
 
 }
 
