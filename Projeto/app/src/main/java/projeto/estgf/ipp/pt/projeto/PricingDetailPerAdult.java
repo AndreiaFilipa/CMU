@@ -1,14 +1,15 @@
 package projeto.estgf.ipp.pt.projeto;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-public class PricingDetailPerAdult {
+public class PricingDetailPerAdult implements Serializable {
 
 private String travelClass;
 private String fareClass;
 private Integer availability;
 private String fareBasis;
-private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
 
 public String getTravelClass() {
 return travelClass;
@@ -40,14 +41,6 @@ return fareBasis;
 
 public void setFareBasis(String fareBasis) {
 this.fareBasis = fareBasis;
-}
-
-public Map<String, Object> getAdditionalProperties() {
-return this.additionalProperties;
-}
-
-public void setAdditionalProperty(String name, Object value) {
-this.additionalProperties.put(name, value);
 }
 
 }

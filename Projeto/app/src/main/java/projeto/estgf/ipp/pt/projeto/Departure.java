@@ -1,12 +1,13 @@
 package projeto.estgf.ipp.pt.projeto;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-public class Departure {
+public class Departure implements Serializable {
 
 private String iataCode;
 private String at;
-private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
 
 public String getIataCode() {
 return iataCode;
@@ -24,12 +25,6 @@ public void setAt(String at) {
 this.at = at;
 }
 
-public Map<String, Object> getAdditionalProperties() {
-return this.additionalProperties;
-}
 
-public void setAdditionalProperty(String name, Object value) {
-this.additionalProperties.put(name, value);
-}
 
 }

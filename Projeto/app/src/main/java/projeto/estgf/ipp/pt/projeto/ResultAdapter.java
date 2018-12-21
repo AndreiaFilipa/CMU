@@ -1,7 +1,12 @@
 package projeto.estgf.ipp.pt.projeto;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +24,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
 
     private Context context;
     private ArrayList<Datum> list;
+    private ArrayList<Service> services;
 
 
     public ResultAdapter(Context context){
@@ -46,10 +52,25 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ResultViewHolder resultViewHolder, int i){
         Datum temp = list.get(i);
+        OfferItem x = temp.getOfferItems().get(0);
+        TextView preco = resultViewHolder.preco;
+        TextView tipo = resultViewHolder.tipo;
+        TextView idResultado = resultViewHolder.idResultado;
 
-        TextView textView = resultViewHolder.textView;
+        preco.setText(x.getPrice().getTotal());
+        tipo.setText(temp.getType());
+        idResultado.setText(temp.getId());
+        services = (ArrayList<Service>) x.getServices();
 
-        textView.setText(temp.getId());
+        resultViewHolder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                Intent intent = new Intent(context, Voo.class);
+
+                intent.putExtra("prr",services);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
