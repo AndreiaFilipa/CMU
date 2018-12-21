@@ -11,6 +11,7 @@ import android.support.v7.widget.SearchView;
 
 public class PesquisaActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
+    private IdaRegressoVoo resultadosPesquisa;
     private SearchView searchView;
     private ResultAdapter adapter;
 
@@ -18,6 +19,8 @@ public class PesquisaActivity extends AppCompatActivity implements SearchView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesquisa);
+
+        resultadosPesquisa = (IdaRegressoVoo) getIntent().getSerializableExtra("Resultados");
 
         searchView = (SearchView) findViewById(R.id.pesquisa);
         searchView.setOnQueryTextListener(this);
@@ -35,7 +38,7 @@ public class PesquisaActivity extends AppCompatActivity implements SearchView.On
     public boolean onQueryTextSubmit(String x){
         ResultsVoos resultados = new ResultsVoos (this,adapter);
 
-       resultados.resultados("OPO","LIS","2018-12-23","2018-12-28",2);
+       resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(),resultadosPesquisa.getDataRegresso(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
 
         return true;
 
