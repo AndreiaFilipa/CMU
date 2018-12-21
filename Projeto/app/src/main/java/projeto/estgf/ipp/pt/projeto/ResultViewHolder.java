@@ -5,34 +5,30 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.TextView;
 
-public class ResultViewHolder extends RecyclerView.ViewHolder {
-    public TextView textView;
-    public TextView textView1;
-    public TextView textView2;
-    public TextView textView3;
-    public TextView textView4;
-    public TextView textView5;
-    public TextView textView6;
-    public TextView textView7;
-    public TextView textView8;
-    public TextView textView9;
-    public TextView textView10;
+public class ResultViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public TextView preco;
+    public TextView tipo;
+    public TextView idResultado;
+
+    private ItemClickListener itemClickListener;
 
     public ResultViewHolder(@NonNull View itemView) {
         super(itemView);
 
-        this.textView = (TextView) itemView.findViewById(R.id.preco);
-        this.textView1 = (TextView) itemView.findViewById(R.id.partida);
-        this.textView2 = (TextView) itemView.findViewById(R.id.companhia);
-        this.textView3 = (TextView) itemView.findViewById(R.id.hora);
-        this.textView4 = (TextView) itemView.findViewById(R.id.viagem);
-        this.textView5 = (TextView) itemView.findViewById(R.id.duracao);
-        this.textView6 = (TextView) itemView.findViewById(R.id.regresso);
-        this.textView7 = (TextView) itemView.findViewById(R.id.companhia1);
-        this.textView8 = (TextView) itemView.findViewById(R.id.hora1);
-        this.textView9 = (TextView) itemView.findViewById(R.id.viagem1);
-        this.textView10 = (TextView) itemView.findViewById(R.id.duracao1);
+        this.preco = (TextView) itemView.findViewById(R.id.preco);
+        this.tipo = (TextView) itemView.findViewById(R.id.tipo);
+        this.idResultado = (TextView) itemView.findViewById(R.id.idResultado);
+
+        itemView.setOnClickListener(this);
 
     }
 
+    @Override
+    public void onClick(View v) {
+        itemClickListener.onClick(v,getAdapterPosition());
+    }
+
+    public void setItemClickListener(ItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
 }

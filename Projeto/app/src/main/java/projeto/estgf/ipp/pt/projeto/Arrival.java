@@ -1,14 +1,14 @@
 package projeto.estgf.ipp.pt.projeto;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Arrival {
+public class Arrival  implements Serializable {
 
 private String iataCode;
 private String at;
 private String terminal;
-private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
 public String getIataCode() {
 return iataCode;
@@ -34,12 +34,5 @@ public void setTerminal(String terminal) {
 this.terminal = terminal;
 }
 
-public Map<String, Object> getAdditionalProperties() {
-return this.additionalProperties;
-}
-
-public void setAdditionalProperty(String name, Object value) {
-this.additionalProperties.put(name, value);
-}
 
 }
