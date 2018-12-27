@@ -28,6 +28,7 @@ public class ResultViewHolderViagem  extends RecyclerView.ViewHolder{
         this.hora = (TextView) itemView.findViewById(R.id.hora);
         this.viagem = (TextView) itemView.findViewById(R.id.viagem);
         this.duracao = (TextView) itemView.findViewById(R.id.duracao);
+
         this.regresso = (TextView) itemView.findViewById(R.id.regresso);
         this.companhia1 = (TextView) itemView.findViewById(R.id.companhia1);
         this.hora1 = (TextView) itemView.findViewById(R.id.hora1);

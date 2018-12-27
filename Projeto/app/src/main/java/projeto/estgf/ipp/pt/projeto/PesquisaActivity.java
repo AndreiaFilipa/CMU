@@ -40,7 +40,7 @@ public class PesquisaActivity extends AppCompatActivity {
 
         ResultsVoos resultados = new ResultsVoos (this,adapter);
 
-        resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(),resultadosPesquisa.getDataRegresso(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
+        resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
 
 
 

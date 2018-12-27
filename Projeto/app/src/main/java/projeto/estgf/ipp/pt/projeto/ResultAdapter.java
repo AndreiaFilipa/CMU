@@ -1,24 +1,16 @@
 package projeto.estgf.ipp.pt.projeto;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.xml.transform.Result;
 
 public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
 
@@ -44,7 +36,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View resultView = inflater.inflate(R.layout.row_layout_search_flight, viewGroup, false);
+        View resultView = inflater.inflate(R.layout.row_layout_search_voo_ida_volta, viewGroup, false);
 
         return new ResultViewHolder(resultView);
     }
@@ -57,6 +49,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
         TextView tipo = resultViewHolder.tipo;
         TextView idResultado = resultViewHolder.idResultado;
 
+
         preco.setText(x.getPrice().getTotal());
         tipo.setText(temp.getType());
         idResultado.setText(temp.getId());
@@ -68,6 +61,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
                 Intent intent = new Intent(context, Voo.class);
 
                 intent.putExtra("prr",services);
+                //intent.putExtra("IdaVolta",true);
                 context.startActivity(intent);
             }
         });
