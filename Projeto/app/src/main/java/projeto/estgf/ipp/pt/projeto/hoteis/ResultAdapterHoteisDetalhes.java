@@ -37,7 +37,7 @@ public class ResultAdapterHoteisDetalhes extends RecyclerView.Adapter<ResultView
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View resultView = inflater.inflate(R.layout.resultados, viewGroup, false);
+        View resultView = inflater.inflate(R.layout.resultados_hoteis, viewGroup, false);
 
         return new ResultViewHolderHoteisDetalhes(resultView);
     }

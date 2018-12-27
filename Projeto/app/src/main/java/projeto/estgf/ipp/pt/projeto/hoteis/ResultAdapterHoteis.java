@@ -43,13 +43,13 @@ public class ResultAdapterHoteis extends RecyclerView.Adapter<ResultViewHolderHo
     public void onBindViewHolder(@NonNull ResultViewHolderHoteis resultViewHolder, int i){
         DatumHoteis temp = list.get(i);
 
-        TextView textView = resultViewHolder.textView;
-        TextView textView1 = resultViewHolder.textView1;
-        TextView textView2 = resultViewHolder.textView2;
+        TextView tipo = resultViewHolder.textView;
+        TextView nome = resultViewHolder.textView1;
+        TextView chainCode = resultViewHolder.textView2;
 
-        textView.setText(temp.getType());
-        textView1.setText(temp.getHotel().getName());
-        textView2.setText(temp.getHotel().getChainCode());
+        tipo.setText(temp.getHotel().getType());
+        nome.setText(temp.getHotel().getName());
+        chainCode.setText(temp.getHotel().getChainCode());
 
 
 
