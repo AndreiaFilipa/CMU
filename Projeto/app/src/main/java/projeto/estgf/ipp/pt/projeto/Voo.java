@@ -17,8 +17,9 @@ private ArrayList<Service> list;
         setContentView(R.layout.activity_voo);
 
         list=(ArrayList<Service>) getIntent().getSerializableExtra("prr");
+        boolean x=getIntent().getBooleanExtra("IdaVolta",true);
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
-        ResultAdapterViagem resultAdapterViagem = new ResultAdapterViagem(this);
+        ResultAdapterViagem resultAdapterViagem = new ResultAdapterViagem(this,x);
         resultAdapterViagem.setList(list);
         RecyclerView recyclerView = findViewById(R.id.recyclerViewViagem);
         recyclerView.setAdapter(resultAdapterViagem);

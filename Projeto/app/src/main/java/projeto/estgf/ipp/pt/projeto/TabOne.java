@@ -33,13 +33,13 @@ public class TabOne extends Fragment implements View.OnClickListener {
     private ArrayAdapter<String> originAirportsAdapter;
     private ArrayAdapter<String> destinationAirportsAdapter;
 
-    IdaRegressoVoo TextV1;
+    private IdaRegressoVoo TextV1;
 
-    AutoCompleteTextView origins ;
-    AutoCompleteTextView destinations ;
-    EditText editT3;
-    EditText editT4;
-    EditText editT5;
+    private AutoCompleteTextView origins ;
+    private AutoCompleteTextView destinations ;
+    private EditText editT3;
+    private EditText editT4;
+    private EditText editT5;
 
 
 
@@ -84,9 +84,7 @@ public class TabOne extends Fragment implements View.OnClickListener {
             showDatePickerDialog(v, R.id.editTextArriveDateVoo);
         }else if (v.getId()== R.id.buttonExecute){
             Intent pesquisa = new Intent(context,PesquisaActivity.class);
-
-
-
+            pesquisa.putExtra("IdaVolta",true);
 
             IdaRegressoVoo TextV1 = new IdaRegressoVoo();
             TextV1.setOrigem(origins.getText().toString());

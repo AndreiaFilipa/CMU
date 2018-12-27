@@ -14,10 +14,9 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.support.v7.widget.SearchView;
 
-public class PesquisaActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class PesquisaActivity extends AppCompatActivity {
 
     private IdaRegressoVoo resultadosPesquisa;
-    private SearchView searchView;
     private ResultAdapter adapter;
     private Context context;
     @Override
@@ -28,8 +27,6 @@ public class PesquisaActivity extends AppCompatActivity implements SearchView.On
 
         resultadosPesquisa = (IdaRegressoVoo) getIntent().getSerializableExtra("Resultados");
 
-        searchView = (SearchView) findViewById(R.id.pesquisa);
-        searchView.setOnQueryTextListener(this);
 
         this.adapter = new ResultAdapter(this);
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
@@ -39,20 +36,14 @@ public class PesquisaActivity extends AppCompatActivity implements SearchView.On
 
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    }
 
-    @Override
-    public boolean onQueryTextSubmit(String x){
+
         ResultsVoos resultados = new ResultsVoos (this,adapter);
 
-       resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(),resultadosPesquisa.getDataRegresso(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
+        resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
 
-        return true;
+
 
     }
 
-    @Override
-    public boolean onQueryTextChange(String x){
-        return true;
-    }
 }

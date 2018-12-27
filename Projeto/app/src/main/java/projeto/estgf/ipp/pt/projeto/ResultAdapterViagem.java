@@ -14,11 +14,13 @@ import java.util.List;
 public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderViagem> {
 
     private Context context;
+    private boolean b;
     private ArrayList<Service> list;
 
 
-    public ResultAdapterViagem(Context context){
+    public ResultAdapterViagem(Context context, boolean b){
         this.context=context;
+        this.b = b;
         list=new ArrayList<Service>();
 
     }
@@ -34,7 +36,7 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View resultView = inflater.inflate(R.layout.resultados, viewGroup, false);
+        View resultView = inflater.inflate(R.layout.resultados_voos_ida_volta, viewGroup, false);
 
         return new ResultViewHolderViagem(resultView);
     }
@@ -44,23 +46,32 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
         Service service = list.get(i);
         Segment temp = service.getSegments().get(0);
 
-        TextView companhia = resultViewHolder.companhia;
-        TextView hora = resultViewHolder.hora;
-        TextView viagem = resultViewHolder.viagem;
-        TextView duracao = resultViewHolder.duracao;
-        TextView companhia1 = resultViewHolder.companhia1;
-        TextView hora1 = resultViewHolder.hora1;
-        TextView viagem1 = resultViewHolder.viagem1;
-        TextView duracao1 = resultViewHolder.duracao1;
 
-        companhia.setText(temp.getFlightSegment().getCarrierCode());
-        hora.setText(temp.getFlightSegment().getDeparture().getAt());
-        viagem.setText(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()));
-        duracao.setText(temp.getFlightSegment().getDuration());
-        companhia1.setText(temp.getFlightSegment().getCarrierCode());
-        hora1.setText(temp.getFlightSegment().getArrival().getAt());
-        viagem1.setText(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()));
-        duracao1.setText(temp.getFlightSegment().getDuration());
+            TextView companhia = resultViewHolder.companhia;
+            TextView hora = resultViewHolder.hora;
+            TextView viagem = resultViewHolder.viagem;
+            TextView duracao = resultViewHolder.duracao;
+            companhia.setText(temp.getFlightSegment().getCarrierCode());
+            hora.setText(temp.getFlightSegment().getDeparture().getAt());
+            viagem.setText(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()));
+            duracao.setText(temp.getFlightSegment().getDuration());
+
+        if(b) {
+            TextView regresso=resultViewHolder.regresso;
+            TextView companhia1 = resultViewHolder.companhia1;
+            TextView hora1 = resultViewHolder.hora1;
+            TextView viagem1 = resultViewHolder.viagem1;
+            TextView duracao1 = resultViewHolder.duracao1;
+            regresso.setVisibility(View.VISIBLE);
+            companhia1.setVisibility(View.VISIBLE);
+            hora1.setVisibility(View.VISIBLE);
+            viagem1.setVisibility(View.VISIBLE);
+            duracao1.setVisibility(View.VISIBLE);
+            companhia1.setText(temp.getFlightSegment().getCarrierCode());
+            hora1.setText(temp.getFlightSegment().getArrival().getAt());
+            viagem1.setText(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()));
+            duracao1.setText(temp.getFlightSegment().getDuration());
+        }
     }
 
     @Override

@@ -17,6 +17,8 @@ public interface Rotas {
     @GET("shopping/flight-offers")
     Call<Data> searchFlights (@Header("Authorization") String token, @Query("origin") String origin, @Query("destination") String destination, @Query("departureDate") String departureDate, @Query("returnDate") String returnDate, @Query("adults") int adults);
 
+    @GET("shopping/flight-offers")
+    Call<Data> searchFlights (@Header("Authorization") String token, @Query("origin") String origin, @Query("destination") String destination, @Query("departureDate") String departureDate, @Query("adults") int adults);
 //    @FormUrlEncoded
 //    @POST("security/oauth2/token")
 //    Call<Token> getToken(@Body HashMap<String, String> x);

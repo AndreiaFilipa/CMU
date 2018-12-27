@@ -35,6 +35,7 @@ public class ResultAdapterHoteis extends RecyclerView.Adapter<ResultViewHolderHo
 
         View resultView = inflater.inflate(R.layout.row_layout_search_hoteis, viewGroup, false);
 
+
         return new ResultViewHolderHoteis(resultView);
     }
 
