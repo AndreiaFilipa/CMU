@@ -4,12 +4,9 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -19,7 +16,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-import Hoteis.ProcuraHotel;
+import projeto.estgf.ipp.pt.projeto.hoteis.PesquisaHoteis;
+import projeto.estgf.ipp.pt.projeto.hoteis.ProcuraHotel;
 
 public class HotelActivity extends AppCompatActivity implements View.OnClickListener {
     private Button temp;
@@ -94,7 +92,7 @@ public class HotelActivity extends AppCompatActivity implements View.OnClickList
         }else if(v.getId() == R.id.buttonPartida){
             showDatePickerDialog(v,R.id.editTextPartida);
         } else if (v.getId()== R.id.buttonExecuteH){
-            Intent pesquisa = new Intent(context,PesquisaActivity.class);
+            Intent pesquisa = new Intent(context, PesquisaHoteis.class);
 
 
             ProcuraHotel TextV1 = new ProcuraHotel();
@@ -106,7 +104,7 @@ public class HotelActivity extends AppCompatActivity implements View.OnClickList
             pesquisa.putExtra("Resultados",TextV1);
 
 
-            
+
             startActivity(pesquisa);
         }
     }
