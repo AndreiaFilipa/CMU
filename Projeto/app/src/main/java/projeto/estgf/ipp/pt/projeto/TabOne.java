@@ -84,7 +84,6 @@ public class TabOne extends Fragment implements View.OnClickListener {
             showDatePickerDialog(v, R.id.editTextArriveDateVoo);
         }else if (v.getId()== R.id.buttonExecute){
             Intent pesquisa = new Intent(context,PesquisaActivity.class);
-            pesquisa.putExtra("IdaVolta",true);
 
             IdaRegressoVoo TextV1 = new IdaRegressoVoo();
             TextV1.setOrigem(origins.getText().toString());
@@ -94,6 +93,7 @@ public class TabOne extends Fragment implements View.OnClickListener {
             TextV1.setPassageiros(editT5.getText().toString());
 
             pesquisa.putExtra("Resultados",TextV1);
+            pesquisa.putExtra("IdaVolta",true);
 
             startActivity(pesquisa);
         }

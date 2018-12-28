@@ -71,7 +71,7 @@ public class TabTwo extends Fragment implements View.OnClickListener{
             showDatePickerDialog(v);
         }else if(v.getId() == R.id.buttonExecuteIda){
             Intent pesquisa = new Intent(context,PesquisaActivity.class);
-            pesquisa.putExtra("Ida",false);
+            pesquisa.putExtra("IdaVolta",false);
 
             Input = new IdaRegressoVoo();
             Input.setOrigem(origins.getText().toString());

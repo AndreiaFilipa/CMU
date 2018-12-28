@@ -25,7 +25,8 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PesquisaActivity" />
-        <activity android:name=".Voo"></activity>
+        <activity android:name=".Voo" />
+        <activity android:name=".Registo_Activity"></activity>
     </application>
 
 </manifest>

@@ -16,8 +16,8 @@ private ArrayList<Service> list;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voo);
 
-        list=(ArrayList<Service>) getIntent().getSerializableExtra("prr");
-        boolean x=getIntent().getBooleanExtra("IdaVolta",true);
+        list = (ArrayList<Service>) getIntent().getSerializableExtra("prr");
+        boolean x = getIntent().getBooleanExtra("IdaVolta",true);
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         ResultAdapterViagem resultAdapterViagem = new ResultAdapterViagem(this,x);
         resultAdapterViagem.setList(list);

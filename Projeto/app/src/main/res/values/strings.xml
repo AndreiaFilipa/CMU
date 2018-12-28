@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">AAViagens</string>
     <string name="button_run">Pesquisar</string>
+    <string name="button_registo">Registar</string>
     <string name="button_voo">Voos</string>
     <string name="button_voohotel">Voos e Hotel</string>
     <string name="button_hotel">Hotéis</string>
@@ -3621,4 +3622,5 @@
     <string name="data_check_out">Data check-out</string>
     <string name="data_check_in">Data check-in</string>
     <string name="pesquisar">Pesquisar</string>
+    <string name="name">Nome</string>
 </resources>

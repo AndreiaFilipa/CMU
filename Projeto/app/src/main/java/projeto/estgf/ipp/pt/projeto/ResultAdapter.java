@@ -15,12 +15,14 @@ import java.util.List;
 public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
 
     private Context context;
+    private boolean b;
     private ArrayList<Datum> list;
     private ArrayList<Service> services;
 
 
-    public ResultAdapter(Context context){
+    public ResultAdapter(Context context, boolean b){
         this.context=context;
+        this.b = b;
         list=new ArrayList<Datum>();
 
     }
@@ -36,7 +38,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View resultView = inflater.inflate(R.layout.row_layout_search_voo_ida_volta, viewGroup, false);
+        View resultView = inflater.inflate(R.layout.row_layout_search_voos, viewGroup, false);
 
         return new ResultViewHolder(resultView);
     }
@@ -61,7 +63,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
                 Intent intent = new Intent(context, Voo.class);
 
                 intent.putExtra("prr",services);
-                //intent.putExtra("IdaVolta",true);
+                intent.putExtra("IdaVolta",b);
                 context.startActivity(intent);
             }
         });

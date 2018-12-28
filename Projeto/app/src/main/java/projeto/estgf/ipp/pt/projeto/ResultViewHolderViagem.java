@@ -9,6 +9,7 @@ import projeto.estgf.ipp.pt.projeto.R;
 
 public class ResultViewHolderViagem  extends RecyclerView.ViewHolder{
 
+    public TextView voosIda;
     public TextView partida;
     public TextView companhia;
     public TextView hora;
@@ -20,9 +21,11 @@ public class ResultViewHolderViagem  extends RecyclerView.ViewHolder{
     public TextView viagem1;
     public TextView duracao1;
 
+
     public ResultViewHolderViagem(@NonNull View itemView) {
         super(itemView);
 
+        this.voosIda = (TextView) itemView.findViewById(R.id.voosIda);
         this.partida = (TextView) itemView.findViewById(R.id.partida);
         this.companhia = (TextView) itemView.findViewById(R.id.companhia);
         this.hora = (TextView) itemView.findViewById(R.id.hora);
@@ -34,6 +37,7 @@ public class ResultViewHolderViagem  extends RecyclerView.ViewHolder{
         this.hora1 = (TextView) itemView.findViewById(R.id.hora1);
         this.viagem1 = (TextView) itemView.findViewById(R.id.viagem1);
         this.duracao1 = (TextView) itemView.findViewById(R.id.duracao1);
+
 
     }
 
