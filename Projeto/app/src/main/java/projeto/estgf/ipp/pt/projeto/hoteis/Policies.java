@@ -1,6 +1,8 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
-public class Policies {
+import java.io.Serializable;
+
+public class Policies implements Serializable {
 
     private Cancellation cancellation;
 

@@ -1,10 +1,11 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
+import java.io.Serializable;
 import java.util.List;
 
 
-public class Variations {
+public class Variations implements Serializable {
 
 
     private Average average;

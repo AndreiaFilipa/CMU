@@ -1,9 +1,10 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
+import java.io.Serializable;
 import java.util.List;
 
 
-public class AcceptedPayments {
+public class AcceptedPayments implements Serializable {
 
 
     private List<String> creditCards = null;

@@ -18,7 +18,7 @@ public class HoteisDetalhes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hoteis_detalhes);
 
-        list=(ArrayList<Offer>) getIntent().getSerializableExtra("prr");
+        list=(ArrayList<Offer>) getIntent().getSerializableExtra("offers");
 
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         ResultAdapterHoteisDetalhes resultAdapterHoteisDetalhes = new ResultAdapterHoteisDetalhes(this);

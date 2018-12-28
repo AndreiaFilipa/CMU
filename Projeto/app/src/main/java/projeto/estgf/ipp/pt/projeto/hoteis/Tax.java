@@ -1,7 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
-public class Tax {
+import java.io.Serializable;
+
+public class Tax implements Serializable {
 
     private String code;
     private Integer percentage;

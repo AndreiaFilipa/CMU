@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import projeto.estgf.ipp.pt.projeto.R;
 
-public class ResultViewHolderViagem  extends RecyclerView.ViewHolder{
+public class ResultViewHolderViagem  extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     public TextView partida;
     public TextView companhia;
@@ -19,6 +19,7 @@ public class ResultViewHolderViagem  extends RecyclerView.ViewHolder{
     public TextView hora1;
     public TextView viagem1;
     public TextView duracao1;
+    private ItemClickListener itemClickListener;
 
     public ResultViewHolderViagem(@NonNull View itemView) {
         super(itemView);
@@ -34,7 +35,16 @@ public class ResultViewHolderViagem  extends RecyclerView.ViewHolder{
         this.hora1 = (TextView) itemView.findViewById(R.id.hora1);
         this.viagem1 = (TextView) itemView.findViewById(R.id.viagem1);
         this.duracao1 = (TextView) itemView.findViewById(R.id.duracao1);
-
+        itemView.setOnClickListener(this);
     }
 
+
+    @Override
+    public void onClick(View v) {
+        itemClickListener.onClick(v,getAdapterPosition());
+    }
+
+    public void setItemClickListener(ItemClickListener itemClickListener) {
+        this.itemClickListener = itemClickListener;
+    }
 }

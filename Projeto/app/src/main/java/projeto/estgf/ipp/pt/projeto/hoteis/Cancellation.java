@@ -1,8 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
+import java.io.Serializable;
 
-public class Cancellation {
+public class Cancellation implements Serializable {
 
 
     private Integer numberOfNights;

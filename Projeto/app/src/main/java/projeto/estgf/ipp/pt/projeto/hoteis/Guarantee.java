@@ -1,7 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
-public class Guarantee {
+import java.io.Serializable;
+
+public class Guarantee implements Serializable {
 
 
     private AcceptedPayments acceptedPayments;

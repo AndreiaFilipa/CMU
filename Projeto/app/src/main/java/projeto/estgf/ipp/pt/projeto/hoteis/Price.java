@@ -1,8 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Price {
+public class Price implements Serializable {
 
 
     private String currency;

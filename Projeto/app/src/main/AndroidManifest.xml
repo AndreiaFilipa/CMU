@@ -26,8 +26,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PesquisaActivity" />
         <activity android:name=".Voo" />
-        <activity android:name="projeto.estgf.ipp.pt.projeto.hoteis.PesquisaHoteis" />
-        <activity android:name="projeto.estgf.ipp.pt.projeto.hoteis.HoteisDetalhes"></activity>
+        <activity android:name=".hoteis.PesquisaHoteis" />
+        <activity android:name=".hoteis.HoteisDetalhes" />
+        <activity android:name=".PesquisaVooHotel"></activity>
     </application>
 
 </manifest>

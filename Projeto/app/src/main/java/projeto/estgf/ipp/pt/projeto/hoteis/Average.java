@@ -1,8 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
+import java.io.Serializable;
 
-public class Average {
+public class Average implements Serializable {
     private String total;
     private String base;
 

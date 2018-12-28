@@ -1,7 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
-public class Guests {
+import java.io.Serializable;
+
+public class Guests implements Serializable {
 
     private Integer adults;
 
