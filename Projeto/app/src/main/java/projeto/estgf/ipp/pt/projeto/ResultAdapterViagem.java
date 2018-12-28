@@ -18,14 +18,14 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
     private boolean b;
     private String voo;
     private ArrayList<Service> list;
-    private InformacoesVoo voo;
+    private InformacoesVoo vooInfo;
 
 
     public ResultAdapterViagem(Context context, boolean b,InformacoesVoo voo){
         this.context=context;
         this.b = b;
         list=new ArrayList<Service>();
-        this.voo=voo;
+        this.vooInfo=voo;
 
     }
 
@@ -85,16 +85,16 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
             viagem1.setText(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()));
             duracao1.setText(temp.getFlightSegment().getDuration());
 
-            voo.companhiaV=temp.getFlightSegment().getCarrierCode();
-            voo.horaV=temp.getFlightSegment().getArrival().getAt();
-            voo.fluxoViagemV=String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode());
-            voo.duracaoV=temp.getFlightSegment().getDuration();
+            vooInfo.companhiaV=temp.getFlightSegment().getCarrierCode();
+            vooInfo.horaV=temp.getFlightSegment().getArrival().getAt();
+            vooInfo.fluxoViagemV=String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode());
+            vooInfo.duracaoV=temp.getFlightSegment().getDuration();
         }
 
-        voo.companhia=temp.getFlightSegment().getCarrierCode();
-        voo.hora=temp.getFlightSegment().getDeparture().getAt();
-        voo.fluxoViagem=String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode());
-        voo.duracao=temp.getFlightSegment().getDuration();
+        vooInfo.companhia=temp.getFlightSegment().getCarrierCode();
+        vooInfo.hora=temp.getFlightSegment().getDeparture().getAt();
+        vooInfo.fluxoViagem=String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode());
+        vooInfo.duracao=temp.getFlightSegment().getDuration();
 
 
 

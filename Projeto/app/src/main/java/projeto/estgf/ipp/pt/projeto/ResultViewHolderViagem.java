@@ -42,13 +42,10 @@ public class ResultViewHolderViagem  extends RecyclerView.ViewHolder implements 
     }
 
 
-<<<<<<< HEAD
+
     @Override
     public void onClick(View v) {
         itemClickListener.onClick(v,getAdapterPosition());
-=======
-
->>>>>>> fbd1b2959c8deb22ba0f233765192fa6e213c599
     }
 
     public void setItemClickListener(ItemClickListener itemClickListener) {

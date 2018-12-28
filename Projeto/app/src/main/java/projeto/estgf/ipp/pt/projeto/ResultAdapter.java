@@ -67,13 +67,12 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
                 Intent intent = new Intent(context, Voo.class);
 
                 intent.putExtra("prr",services);
-<<<<<<< HEAD
                 intent.putExtra("voo",informacoesVoo);
 
                 //intent.putExtra("IdaVolta",true);
-=======
+
                 intent.putExtra("IdaVolta",b);
->>>>>>> fbd1b2959c8deb22ba0f233765192fa6e213c599
+
                 context.startActivity(intent);
             }
         });

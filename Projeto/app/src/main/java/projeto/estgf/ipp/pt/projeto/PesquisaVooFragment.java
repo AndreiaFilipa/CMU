@@ -34,7 +34,7 @@ public class PesquisaVooFragment extends Fragment {
         View view = inflater.inflate(R.layout.activity_pesquisa, container, false);
 
 
-        this.adapter = new ResultAdapter(context);
+        //this.adapter = new ResultAdapter(context);
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(context, DividerItemDecoration.VERTICAL);
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setAdapter(adapter);
