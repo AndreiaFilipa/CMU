@@ -10,7 +10,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
-import Hoteis.ProcuraHotel;
 
 public class Registo_Activity extends AppCompatActivity implements View.OnClickListener {
     private Button temp;
