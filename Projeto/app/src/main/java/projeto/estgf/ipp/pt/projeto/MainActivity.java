@@ -1,20 +1,12 @@
 package projeto.estgf.ipp.pt.projeto;
 
-import android.app.AlertDialog;
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
-import android.widget.EditText;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
-import APIControllers.ControladoresAPI;
+import projeto.estgf.ipp.pt.projeto.APIControllers.ControladoresAPI;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 

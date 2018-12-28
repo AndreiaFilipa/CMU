@@ -1,8 +1,8 @@
 package projeto.estgf.ipp.pt.projeto;
 
 import android.content.Context;
-import APIControllers.ControladoresAPI;
-import APIControllers.Rotas;
+import projeto.estgf.ipp.pt.projeto.APIControllers.ControladoresAPI;
+import projeto.estgf.ipp.pt.projeto.APIControllers.Rotas;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
