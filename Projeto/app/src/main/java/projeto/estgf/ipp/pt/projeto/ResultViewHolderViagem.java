@@ -9,6 +9,7 @@ import projeto.estgf.ipp.pt.projeto.R;
 
 public class ResultViewHolderViagem  extends RecyclerView.ViewHolder implements View.OnClickListener {
 
+    public TextView voosIda;
     public TextView partida;
     public TextView companhia;
     public TextView hora;
@@ -21,9 +22,11 @@ public class ResultViewHolderViagem  extends RecyclerView.ViewHolder implements 
     public TextView duracao1;
     private ItemClickListener itemClickListener;
 
+
     public ResultViewHolderViagem(@NonNull View itemView) {
         super(itemView);
 
+        this.voosIda = (TextView) itemView.findViewById(R.id.voosIda);
         this.partida = (TextView) itemView.findViewById(R.id.partida);
         this.companhia = (TextView) itemView.findViewById(R.id.companhia);
         this.hora = (TextView) itemView.findViewById(R.id.hora);
@@ -39,9 +42,13 @@ public class ResultViewHolderViagem  extends RecyclerView.ViewHolder implements 
     }
 
 
+<<<<<<< HEAD
     @Override
     public void onClick(View v) {
         itemClickListener.onClick(v,getAdapterPosition());
+=======
+
+>>>>>>> fbd1b2959c8deb22ba0f233765192fa6e213c599
     }
 
     public void setItemClickListener(ItemClickListener itemClickListener) {

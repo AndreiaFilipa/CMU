@@ -43,8 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent hotel = new Intent(this,HotelActivity.class);
             startActivity(hotel);
         }else if(v.getId()==R.id.buttonVooHotel){
-            Intent vooHotel = new Intent(this,VooHotelActivity.class);
-            startActivity(vooHotel);
+            Intent registo = new Intent(this,Registo_Activity.class);
+            startActivity(registo);
         }
     }
 }

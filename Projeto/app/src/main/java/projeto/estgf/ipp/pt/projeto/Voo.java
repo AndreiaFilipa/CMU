@@ -18,9 +18,14 @@ private InformacoesVoo voo;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_voo);
 
+<<<<<<< HEAD
         voo=(InformacoesVoo) getIntent().getSerializableExtra("voo") ;
         list=(ArrayList<Service>) getIntent().getSerializableExtra("prr");
         boolean x=getIntent().getBooleanExtra("IdaVolta",true);
+=======
+        list = (ArrayList<Service>) getIntent().getSerializableExtra("prr");
+        boolean x = getIntent().getBooleanExtra("IdaVolta",true);
+>>>>>>> fbd1b2959c8deb22ba0f233765192fa6e213c599
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         ResultAdapterViagem resultAdapterViagem = new ResultAdapterViagem(this,x,voo);
         resultAdapterViagem.setList(list);

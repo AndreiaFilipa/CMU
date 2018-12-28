@@ -39,8 +39,12 @@ public class ResultAdapterHoteis extends RecyclerView.Adapter<ResultViewHolderHo
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
+<<<<<<< HEAD:Projeto/app/src/main/java/Hoteis/ResultAdapterHoteis.java
+        View resultView = inflater.inflate(R.layout.row_layout_search_voos, viewGroup, false);
+=======
         View resultView = inflater.inflate(R.layout.row_layout_search_hoteis, viewGroup, false);
 
+>>>>>>> 44301a85cdecab2f0d7af0b9c71dc391dbd5a464:Projeto/app/src/main/java/projeto/estgf/ipp/pt/projeto/hoteis/ResultAdapterHoteis.java
 
         return new ResultViewHolderHoteis(resultView);
     }

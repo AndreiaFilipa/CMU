@@ -16,6 +16,7 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
 
     private Context context;
     private boolean b;
+    private String voo;
     private ArrayList<Service> list;
     private InformacoesVoo voo;
 
@@ -39,7 +40,7 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View resultView = inflater.inflate(R.layout.resultados_voos_ida_volta, viewGroup, false);
+        View resultView = inflater.inflate(R.layout.resultados_voos, viewGroup, false);
 
         return new ResultViewHolderViagem(resultView);
     }
@@ -49,7 +50,16 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
         Service service = list.get(i);
         Segment temp = service.getSegments().get(0);
 
+        if(i == 0){
+            this.voo = String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode());
+        }
+        TextView VoosIda = resultViewHolder.voosIda;
+        if(voo.equals(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()))){
 
+            VoosIda.setText("Voos Ida");
+        }else{
+            VoosIda.setText("Voos Volta");
+        }
             TextView companhia = resultViewHolder.companhia;
             TextView hora = resultViewHolder.hora;
             TextView viagem = resultViewHolder.viagem;

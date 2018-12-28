@@ -24,11 +24,11 @@ public class PesquisaActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesquisa);
         context = this;
-
+        boolean b = (boolean) getIntent().getBooleanExtra("IdaVolta",true);
         resultadosPesquisa = (IdaRegressoVoo) getIntent().getSerializableExtra("Resultados");
 
 
-        this.adapter = new ResultAdapter(this);
+        this.adapter = new ResultAdapter(this, b);
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this, DividerItemDecoration.VERTICAL);
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setAdapter(adapter);
@@ -40,9 +40,12 @@ public class PesquisaActivity extends AppCompatActivity {
 
         ResultsVoos resultados = new ResultsVoos (this,adapter);
 
-        resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
 
+        if(b){
+            resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(),resultadosPesquisa.getDataRegresso(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
 
+        }else
+            resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
 
     }
 
