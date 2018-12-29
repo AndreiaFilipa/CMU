@@ -1,0 +1,175 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "acebdd3c225db45b95508eb364cbc112",
+    "entities": [
+      {
+        "tableName": "InformacoesVoo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `tipo` TEXT, `preco` TEXT, `companhia` TEXT, `hora` TEXT, `fluxoViagem` TEXT, `duracao` TEXT, `companhiaV` TEXT, `horaV` TEXT, `fluxoViagemV` TEXT, `duracaoV` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tipo",
+            "columnName": "tipo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "preco",
+            "columnName": "preco",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "companhia",
+            "columnName": "companhia",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hora",
+            "columnName": "hora",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fluxoViagem",
+            "columnName": "fluxoViagem",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "duracao",
+            "columnName": "duracao",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "companhiaV",
+            "columnName": "companhiaV",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "horaV",
+            "columnName": "horaV",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "fluxoViagemV",
+            "columnName": "fluxoViagemV",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "duracaoV",
+            "columnName": "duracaoV",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "InformacoesHotel",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`tipoHotel` TEXT NOT NULL, `nomeHotel` TEXT, `chainCodeHotel` TEXT, `roomTypeHotel` TEXT, `roomDescriptionHotel` TEXT, `priceHotel` TEXT, PRIMARY KEY(`tipoHotel`))",
+        "fields": [
+          {
+            "fieldPath": "tipoHotel",
+            "columnName": "tipoHotel",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "nomeHotel",
+            "columnName": "nomeHotel",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "chainCodeHotel",
+            "columnName": "chainCodeHotel",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "roomTypeHotel",
+            "columnName": "roomTypeHotel",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "roomDescriptionHotel",
+            "columnName": "roomDescriptionHotel",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "priceHotel",
+            "columnName": "priceHotel",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "tipoHotel"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "InformacoesRegisto",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nomeUtilizador` TEXT NOT NULL, `ciadadePreferencia` TEXT, `cidadeHabita` TEXT, PRIMARY KEY(`nomeUtilizador`))",
+        "fields": [
+          {
+            "fieldPath": "nomeUtilizador",
+            "columnName": "nomeUtilizador",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ciadadePreferencia",
+            "columnName": "ciadadePreferencia",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cidadeHabita",
+            "columnName": "cidadeHabita",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "nomeUtilizador"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"acebdd3c225db45b95508eb364cbc112\")"
+    ]
+  }
+}

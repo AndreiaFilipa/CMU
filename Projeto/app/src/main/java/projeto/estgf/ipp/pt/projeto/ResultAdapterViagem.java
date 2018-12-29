@@ -12,6 +12,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import projeto.estgf.ipp.pt.projeto.BD.InformacoesVoo;
+
 public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderViagem> {
 
     private Context context;

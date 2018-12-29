@@ -1,4 +1,4 @@
-package projeto.estgf.ipp.pt.projeto;
+package projeto.estgf.ipp.pt.projeto.BD;
 
 import android.arch.persistence.room.Embedded;
 import android.arch.persistence.room.Entity;

@@ -12,6 +12,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import projeto.estgf.ipp.pt.projeto.BD.InformacoesVoo;
+
 public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
 
     private Context context;
@@ -64,7 +66,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
         resultViewHolder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position) {
-                Intent intent = new Intent(context, Voo.class);
+                Intent intent = new Intent(context, VoosDetalhes.class);
 
                 intent.putExtra("prr",services);
                 intent.putExtra("voo",informacoesVoo);

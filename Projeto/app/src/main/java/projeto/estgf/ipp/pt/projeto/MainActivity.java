@@ -1,6 +1,5 @@
 package projeto.estgf.ipp.pt.projeto;
 
-import android.arch.lifecycle.LiveData;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -9,18 +8,23 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.List;
-
 import projeto.estgf.ipp.pt.projeto.APIControllers.ControladoresAPI;
+import projeto.estgf.ipp.pt.projeto.BD.InformacoesRegisto;
+import projeto.estgf.ipp.pt.projeto.BD.Repo;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,DialogRegistoInterface {
 
 
-
+private InformacoesRegisto registo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Repo x = new Repo(this);
+        x.getAllRegistos();
+       // x.getAllVoos();
+       // x.getAllHoteis();
 
         Button temp = (Button) findViewById(R.id.buttonVoo);
         Button temp1 = (Button) findViewById(R.id.buttonVooHotel);
@@ -31,13 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         temp2.setOnClickListener(this);
 
         ControladoresAPI.x();
-        Repo  x = new Repo(this);
-        x.getAllVoos();
-
-
-
-        DialogRegisto y = new DialogRegisto();
-        y.show(getSupportFragmentManager(), "my_dialog");
 
 
     }
