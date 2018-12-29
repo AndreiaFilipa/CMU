@@ -25,7 +25,7 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PesquisaActivity" />
-        <activity android:name=".Voo" />
+        <activity android:name=".VoosDetalhes" />
         <activity android:name=".hoteis.PesquisaHoteis" />
         <activity android:name=".hoteis.HoteisDetalhes" />
         <activity android:name=".PesquisaVooHotel"></activity>

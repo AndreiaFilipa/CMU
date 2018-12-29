@@ -3,7 +3,6 @@ package projeto.estgf.ipp.pt.projeto.hoteis;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,20 +11,22 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import projeto.estgf.ipp.pt.projeto.BD.InformacoesHotel;
 import projeto.estgf.ipp.pt.projeto.ItemClickListener;
 import projeto.estgf.ipp.pt.projeto.R;
-import projeto.estgf.ipp.pt.projeto.Voo;
 
 
 public class ResultAdapterHoteis extends RecyclerView.Adapter<ResultViewHolderHoteis>  {
     private Context context;
     private ArrayList<DatumHoteis> list;
     private ArrayList<Offer>offers;
+    private InformacoesHotel informacoesHotel;
 
 
     public ResultAdapterHoteis(Context context){
         this.context=context;
         list=new ArrayList<DatumHoteis>();
+
     }
 
     public synchronized void setList (ArrayList<DatumHoteis> list) {
@@ -56,6 +57,11 @@ public class ResultAdapterHoteis extends RecyclerView.Adapter<ResultViewHolderHo
         nome.setText(temp.getHotel().getName());
         chainCode.setText(temp.getHotel().getChainCode());
         offers= (ArrayList<Offer>) temp.getOffers();
+        informacoesHotel= new InformacoesHotel();
+
+        informacoesHotel.tipoHotel=temp.getHotel().getType();
+        informacoesHotel.nomeHotel=temp.getHotel().getName();
+        informacoesHotel.chainCodeHotel=temp.getHotel().getChainCode();
 
             resultViewHolder.setItemClickListener(new ItemClickListener() {
                 @Override
@@ -63,6 +69,7 @@ public class ResultAdapterHoteis extends RecyclerView.Adapter<ResultViewHolderHo
                     Intent intent = new Intent(context, HoteisDetalhes.class);
 
                     intent.putExtra("offers",offers);
+                    intent.putExtra("hotel",informacoesHotel);
                     //intent.putExtra("IdaVolta",true);
                     context.startActivity(intent);
                 }

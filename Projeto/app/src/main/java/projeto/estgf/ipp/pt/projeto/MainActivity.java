@@ -1,15 +1,13 @@
 package projeto.estgf.ipp.pt.projeto;
 
-import android.arch.lifecycle.LiveData;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.List;
-
 import projeto.estgf.ipp.pt.projeto.APIControllers.ControladoresAPI;
+import projeto.estgf.ipp.pt.projeto.BD.Repo;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,8 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         temp2.setOnClickListener(this);
 
         ControladoresAPI.x();
-        Repo  x = new Repo(this);
+        Repo x = new Repo(this);
         x.getAllVoos();
+        x.getAllHoteis();
 
     }
 

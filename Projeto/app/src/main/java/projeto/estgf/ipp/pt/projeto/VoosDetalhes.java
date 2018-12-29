@@ -1,7 +1,5 @@
 package projeto.estgf.ipp.pt.projeto;
 
-import android.app.Activity;
-import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
@@ -10,13 +8,16 @@ import android.support.v7.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Voo extends AppCompatActivity implements SaveDialogListener {
+import projeto.estgf.ipp.pt.projeto.BD.InformacoesVoo;
+import projeto.estgf.ipp.pt.projeto.BD.Repo;
+
+public class VoosDetalhes extends AppCompatActivity implements SaveDialogListener {
 private ArrayList<Service> list;
 private InformacoesVoo voo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_voo);
+        setContentView(R.layout.activity_voos_detalhes);
 
 
         voo=(InformacoesVoo) getIntent().getSerializableExtra("voo") ;

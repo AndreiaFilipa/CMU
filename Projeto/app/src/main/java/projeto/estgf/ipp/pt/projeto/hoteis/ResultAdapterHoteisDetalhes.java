@@ -13,19 +13,21 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import projeto.estgf.ipp.pt.projeto.BD.InformacoesHotel;
 import projeto.estgf.ipp.pt.projeto.GuardarDialog;
 import projeto.estgf.ipp.pt.projeto.ItemClickListener;
 import projeto.estgf.ipp.pt.projeto.R;
 
 
 public class ResultAdapterHoteisDetalhes extends RecyclerView.Adapter<ResultViewHolderHoteisDetalhes> {
-
     private Context context;
     private ArrayList<Offer> list;
+    private InformacoesHotel hotelInfo;
 
-    public ResultAdapterHoteisDetalhes(Context context){
+    public ResultAdapterHoteisDetalhes(Context context, InformacoesHotel hotel){
         this.context=context;
         list=new ArrayList<Offer>();
+        this.hotelInfo=hotel;
 
     }
 
@@ -61,8 +63,11 @@ public class ResultAdapterHoteisDetalhes extends RecyclerView.Adapter<ResultView
         roomType.setText(room.getType());
         roomDescription.setText(room.getDescription().getText());
         totalPrice.setText(price.getTotal());
-
         //descriptionOffer.setText(description.getText());
+
+        hotelInfo.roomTypeHotel = room.getType();
+        hotelInfo.roomDescriptionHotel = room.getDescription().getText();
+        hotelInfo.priceHotel = price.getTotal();
 
         resultViewHolder.setItemClickListener(new ItemClickListener() {
             @Override
