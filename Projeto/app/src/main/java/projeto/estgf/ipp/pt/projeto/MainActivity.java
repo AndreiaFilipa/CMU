@@ -35,8 +35,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         x.getAllVoos();
 
 
-        DialogRegisto x = new DialogRegisto();
-        x.show(getSupportFragmentManager(), "my_dialog");
+
+        DialogRegisto y = new DialogRegisto();
+        y.show(getSupportFragmentManager(), "my_dialog");
 
 
     }
