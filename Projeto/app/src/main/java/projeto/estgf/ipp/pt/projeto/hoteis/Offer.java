@@ -1,6 +1,8 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
-public class Offer {
+import java.io.Serializable;
+
+public class Offer implements Serializable {
 
 
     private String id;

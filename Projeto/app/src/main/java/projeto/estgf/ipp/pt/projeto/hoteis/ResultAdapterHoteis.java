@@ -1,7 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,12 +11,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
+
+import projeto.estgf.ipp.pt.projeto.ItemClickListener;
 import projeto.estgf.ipp.pt.projeto.R;
+import projeto.estgf.ipp.pt.projeto.Voo;
 
 
 public class ResultAdapterHoteis extends RecyclerView.Adapter<ResultViewHolderHoteis>  {
     private Context context;
     private ArrayList<DatumHoteis> list;
+    private ArrayList<Offer>offers;
 
 
     public ResultAdapterHoteis(Context context){
@@ -32,13 +38,8 @@ public class ResultAdapterHoteis extends RecyclerView.Adapter<ResultViewHolderHo
     public ResultViewHolderHoteis onCreateViewHolder(@NonNull ViewGroup viewGroup, int i){
         Context context = viewGroup.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-
-<<<<<<< HEAD:Projeto/app/src/main/java/Hoteis/ResultAdapterHoteis.java
-        View resultView = inflater.inflate(R.layout.row_layout_search_voos, viewGroup, false);
-=======
+        
         View resultView = inflater.inflate(R.layout.row_layout_search_hoteis, viewGroup, false);
-
->>>>>>> 44301a85cdecab2f0d7af0b9c71dc391dbd5a464:Projeto/app/src/main/java/projeto/estgf/ipp/pt/projeto/hoteis/ResultAdapterHoteis.java
 
         return new ResultViewHolderHoteis(resultView);
     }
@@ -54,8 +55,18 @@ public class ResultAdapterHoteis extends RecyclerView.Adapter<ResultViewHolderHo
         tipo.setText(temp.getHotel().getType());
         nome.setText(temp.getHotel().getName());
         chainCode.setText(temp.getHotel().getChainCode());
+        offers= (ArrayList<Offer>) temp.getOffers();
 
+            resultViewHolder.setItemClickListener(new ItemClickListener() {
+                @Override
+                public void onClick(View view, int position) {
+                    Intent intent = new Intent(context, HoteisDetalhes.class);
 
+                    intent.putExtra("offers",offers);
+                    //intent.putExtra("IdaVolta",true);
+                    context.startActivity(intent);
+                }
+            });
 
     }
 

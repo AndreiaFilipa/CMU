@@ -1,7 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
-public class Room {
+import java.io.Serializable;
+
+public class Room implements Serializable {
 
 
     private String type;

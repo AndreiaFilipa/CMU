@@ -1,7 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
-public class Commission {
+import java.io.Serializable;
+
+public class Commission implements Serializable {
     private String percentage;
     private String amount;
 

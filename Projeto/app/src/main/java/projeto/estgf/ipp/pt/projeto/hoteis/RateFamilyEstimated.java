@@ -1,6 +1,8 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
-public class RateFamilyEstimated {
+import java.io.Serializable;
+
+public class RateFamilyEstimated implements Serializable {
 
 
     private String code;

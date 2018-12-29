@@ -1,7 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
-public class Description {
+import java.io.Serializable;
+
+public class Description implements Serializable {
 
     private String lang;
 

@@ -1,8 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
+import java.io.Serializable;
 
-public class Deposit {
+public class Deposit implements Serializable {
 
     private String amount;
     private AcceptedPayments_ acceptedPayments;

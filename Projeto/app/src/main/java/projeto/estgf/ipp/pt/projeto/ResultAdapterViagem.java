@@ -2,6 +2,7 @@ package projeto.estgf.ipp.pt.projeto;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +18,14 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
     private boolean b;
     private String voo;
     private ArrayList<Service> list;
+    private InformacoesVoo vooInfo;
 
 
-    public ResultAdapterViagem(Context context, boolean b){
+    public ResultAdapterViagem(Context context, boolean b,InformacoesVoo voo){
         this.context=context;
         this.b = b;
         list=new ArrayList<Service>();
+        this.vooInfo=voo;
 
     }
 
@@ -81,7 +84,28 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
             hora1.setText(temp.getFlightSegment().getArrival().getAt());
             viagem1.setText(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()));
             duracao1.setText(temp.getFlightSegment().getDuration());
+
+            vooInfo.companhiaV=temp.getFlightSegment().getCarrierCode();
+            vooInfo.horaV=temp.getFlightSegment().getArrival().getAt();
+            vooInfo.fluxoViagemV=String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode());
+            vooInfo.duracaoV=temp.getFlightSegment().getDuration();
         }
+
+        vooInfo.companhia=temp.getFlightSegment().getCarrierCode();
+        vooInfo.hora=temp.getFlightSegment().getDeparture().getAt();
+        vooInfo.fluxoViagem=String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode());
+        vooInfo.duracao=temp.getFlightSegment().getDuration();
+
+
+
+
+        resultViewHolder.setItemClickListener(new ItemClickListener() {
+            @Override
+            public void onClick(View view, int position) {
+                GuardarDialog x = new GuardarDialog();
+                x.show(((AppCompatActivity)context).getSupportFragmentManager(),"guardar_bd");
+            }
+        });
     }
 
     @Override

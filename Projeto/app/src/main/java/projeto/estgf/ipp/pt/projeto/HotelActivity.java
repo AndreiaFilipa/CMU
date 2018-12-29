@@ -103,8 +103,6 @@ public class HotelActivity extends AppCompatActivity implements View.OnClickList
 
             pesquisa.putExtra("Resultados",TextV1);
 
-
-
             startActivity(pesquisa);
         }
     }

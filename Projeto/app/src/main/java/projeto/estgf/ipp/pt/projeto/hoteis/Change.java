@@ -1,6 +1,8 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
-public class Change {
+import java.io.Serializable;
+
+public class Change implements Serializable {
     private String startDate;
     private String endDate;
     private String total;

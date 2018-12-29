@@ -1,7 +1,9 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
 
-public class HoldTime {
+import java.io.Serializable;
+
+public class HoldTime implements Serializable {
 
 
     private String deadline;

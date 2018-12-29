@@ -18,7 +18,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
     private boolean b;
     private ArrayList<Datum> list;
     private ArrayList<Service> services;
-
+    private InformacoesVoo informacoesVoo;
 
     public ResultAdapter(Context context, boolean b){
         this.context=context;
@@ -56,6 +56,10 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
         tipo.setText(temp.getType());
         idResultado.setText(temp.getId());
         services = (ArrayList<Service>) x.getServices();
+        informacoesVoo= new InformacoesVoo();
+        informacoesVoo.id=temp.getId();
+        informacoesVoo.preco=x.getPrice().getTotal();
+        informacoesVoo.tipo=temp.getType();
 
         resultViewHolder.setItemClickListener(new ItemClickListener() {
             @Override
@@ -63,7 +67,12 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultViewHolder> {
                 Intent intent = new Intent(context, Voo.class);
 
                 intent.putExtra("prr",services);
+                intent.putExtra("voo",informacoesVoo);
+
+                //intent.putExtra("IdaVolta",true);
+
                 intent.putExtra("IdaVolta",b);
+
                 context.startActivity(intent);
             }
         });

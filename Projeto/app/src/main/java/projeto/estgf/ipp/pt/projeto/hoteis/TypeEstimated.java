@@ -1,6 +1,8 @@
 package projeto.estgf.ipp.pt.projeto.hoteis;
 
-public class TypeEstimated {
+import java.io.Serializable;
+
+public class TypeEstimated implements Serializable {
 
 
     private String category;

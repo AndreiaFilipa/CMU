@@ -1,5 +1,6 @@
 package projeto.estgf.ipp.pt.projeto;
 
+import android.arch.lifecycle.LiveData;
 import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.List;
 
 import projeto.estgf.ipp.pt.projeto.APIControllers.ControladoresAPI;
 
@@ -20,15 +23,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         Button temp = (Button) findViewById(R.id.buttonVoo);
-        Button temp1 =(Button)findViewById(R.id.buttonVooHotel);
-        Button temp2 =(Button) findViewById(R.id.buttonHotel);
+        Button temp1 = (Button) findViewById(R.id.buttonVooHotel);
+        Button temp2 = (Button) findViewById(R.id.buttonHotel);
 
         temp.setOnClickListener(this);
         temp1.setOnClickListener(this);
         temp2.setOnClickListener(this);
 
         ControladoresAPI.x();
-
+        Repo  x = new Repo(this);
+        x.getAllVoos();
 
 
         DialogRegisto x = new DialogRegisto();
