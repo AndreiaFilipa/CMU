@@ -1,14 +1,16 @@
 package projeto.estgf.ipp.pt.projeto;
 
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 
 import projeto.estgf.ipp.pt.projeto.APIControllers.ControladoresAPI;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,DialogRegistoInterface {
 
 
 
@@ -28,6 +30,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ControladoresAPI.x();
 
 
+
+        DialogRegisto x = new DialogRegisto();
+        x.show(getSupportFragmentManager(), "my_dialog");
+
+
     }
 
     @Override
@@ -42,5 +49,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent registo = new Intent(this,Registo_Activity.class);
             startActivity(registo);
         }
+    }
+
+    @Override
+    public void onDialogPositiveClick() {
+        Intent i = new Intent(this,Registo_Activity.class);
+        startActivity(i);
     }
 }
