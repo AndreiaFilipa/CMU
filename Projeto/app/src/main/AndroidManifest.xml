@@ -28,10 +28,12 @@
         <activity android:name=".VoosDetalhes" />
         <activity android:name=".hoteis.PesquisaHoteis" />
         <activity android:name=".hoteis.HoteisDetalhes" />
-        <activity android:name=".PesquisaVooHotel"></activity>
-        <activity android:name=".Registo_Activity"></activity>
-        <activity android:name="projeto.estgf.ipp.pt.projeto.hoteis.PesquisaHoteis" />
-        <activity android:name="projeto.estgf.ipp.pt.projeto.hoteis.HoteisDetalhes"></activity>
+        <activity android:name=".PesquisaVooHotel" />
+        <activity android:name=".Registo_Activity" />
+        <activity android:name=".hoteis.PesquisaHoteis" />
+        <activity android:name=".hoteis.HoteisDetalhes" />
+        <activity android:name=".ResultAdapterSaveVoos" />
+        <activity android:name=".PesquisasGuardadas"></activity>
     </application>
 
 </manifest>

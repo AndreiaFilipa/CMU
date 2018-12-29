@@ -59,8 +59,10 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
         if(voo.equals(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()))){
 
             VoosIda.setText("Voos Ida");
+            vooInfo.fluxoViagemV="Voos Ida";
         }else{
             VoosIda.setText("Voos Volta");
+            vooInfo.fluxoViagemV="Voos Volta";
         }
             TextView companhia = resultViewHolder.companhia;
             TextView hora = resultViewHolder.hora;
@@ -70,22 +72,22 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
             hora.setText(temp.getFlightSegment().getDeparture().getAt());
             viagem.setText(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()));
             duracao.setText(temp.getFlightSegment().getDuration());
-
+        TextView hora1 = resultViewHolder.hora1;hora1.setVisibility(View.VISIBLE);hora1.setText(temp.getFlightSegment().getArrival().getAt());
         if(b) {
             TextView regresso=resultViewHolder.regresso;
-            TextView companhia1 = resultViewHolder.companhia1;
-            TextView hora1 = resultViewHolder.hora1;
+            /*TextView companhia1 = resultViewHolder.companhia1;
+
             TextView viagem1 = resultViewHolder.viagem1;
-            TextView duracao1 = resultViewHolder.duracao1;
-            regresso.setVisibility(View.VISIBLE);
-            companhia1.setVisibility(View.VISIBLE);
-            hora1.setVisibility(View.VISIBLE);
+            TextView duracao1 = resultViewHolder.duracao1;*/
+         //   regresso.setVisibility(View.VISIBLE);
+         /*   companhia1.setVisibility(View.VISIBLE);
+
             viagem1.setVisibility(View.VISIBLE);
             duracao1.setVisibility(View.VISIBLE);
             companhia1.setText(temp.getFlightSegment().getCarrierCode());
-            hora1.setText(temp.getFlightSegment().getArrival().getAt());
+
             viagem1.setText(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()));
-            duracao1.setText(temp.getFlightSegment().getDuration());
+            duracao1.setText(temp.getFlightSegment().getDuration());*/
 
             vooInfo.companhiaV=temp.getFlightSegment().getCarrierCode();
             vooInfo.horaV=temp.getFlightSegment().getArrival().getAt();
