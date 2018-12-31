@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 3,
-    "identityHash": "09cef06634684eee6dc086ab110ac464",
+    "identityHash": "acebdd3c225db45b95508eb364cbc112",
     "entities": [
       {
         "tableName": "InformacoesVoo",
@@ -133,11 +133,43 @@
         },
         "indices": [],
         "foreignKeys": []
+      },
+      {
+        "tableName": "InformacoesRegisto",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`nomeUtilizador` TEXT NOT NULL, `ciadadePreferencia` TEXT, `cidadeHabita` TEXT, PRIMARY KEY(`nomeUtilizador`))",
+        "fields": [
+          {
+            "fieldPath": "nomeUtilizador",
+            "columnName": "nomeUtilizador",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ciadadePreferencia",
+            "columnName": "ciadadePreferencia",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cidadeHabita",
+            "columnName": "cidadeHabita",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "nomeUtilizador"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
       }
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"09cef06634684eee6dc086ab110ac464\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"acebdd3c225db45b95508eb364cbc112\")"
     ]
   }
 }

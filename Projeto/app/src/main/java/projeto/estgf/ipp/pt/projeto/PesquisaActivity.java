@@ -2,6 +2,8 @@ package projeto.estgf.ipp.pt.projeto;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,14 +13,17 @@ import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.support.v7.widget.SearchView;
+import android.widget.TextView;
 
 public class PesquisaActivity extends AppCompatActivity {
 
     private IdaRegressoVoo resultadosPesquisa;
     private ResultAdapter adapter;
     private Context context;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,19 +39,31 @@ public class PesquisaActivity extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.addItemDecoration(itemDecoration);
 
-
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
         ResultsVoos resultados = new ResultsVoos (this,adapter);
 
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
 
-        if(b){
-            resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(),resultadosPesquisa.getDataRegresso(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
+        if(activeNetworkInfo != null && activeNetworkInfo.isConnected()){
+            if(b){
+                resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(),resultadosPesquisa.getDataRegresso(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
 
-        }else
-            resultados.resultados(resultadosPesquisa.getOrigem(),resultadosPesquisa.getDestino(),resultadosPesquisa.getDataPartida(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
+            }else {
+                resultados.resultados(resultadosPesquisa.getOrigem(), resultadosPesquisa.getDestino(), resultadosPesquisa.getDataPartida(), Integer.parseInt(resultadosPesquisa.getPassageiros()));
+            }
+        }else{
+            TextView erro = (TextView) findViewById(R.id.erro);
+            erro.setText("Verifique se esta conectado a internet");
+            erro.setVisibility(View.VISIBLE);
+            FrameLayout frameLayout = (FrameLayout) findViewById(R.id.frameLayout);
+            frameLayout.setVisibility(View.GONE);
+        }
 
     }
+
+
 
 }

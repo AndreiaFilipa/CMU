@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="projeto.estgf.ipp.pt.projeto">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:allowBackup="true"
@@ -25,6 +27,12 @@
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".PesquisaActivity" />
+        <activity android:name=".Voo" />
+        <activity android:name=".Registo_Activity"></activity>
+
+        <activity android:name="projeto.estgf.ipp.pt.projeto.hoteis.PesquisaHoteis" />
+        <activity android:name="projeto.estgf.ipp.pt.projeto.hoteis.HoteisDetalhes"></activity>
+
         <activity android:name=".VoosDetalhes" />
         <activity android:name=".hoteis.PesquisaHoteis" />
         <activity android:name=".hoteis.HoteisDetalhes" />

@@ -7,11 +7,12 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 
-@android.arch.persistence.room.Database(entities = {InformacoesVoo.class, InformacoesHotel.class},version = 3)
+@android.arch.persistence.room.Database(entities = {InformacoesVoo.class, InformacoesHotel.class, InformacoesRegisto.class},version = 4)
 public abstract class Database extends RoomDatabase {
 
     public abstract InformacoesVooDAO dao();
     public abstract InformacoesHotelDAO daoHotel();
+    public abstract InformacoesRegistoDAO daoRegisto();
 
     private static  volatile Database INSTANCE;
 
@@ -21,7 +22,7 @@ public abstract class Database extends RoomDatabase {
                 if(INSTANCE == null){
                     INSTANCE = android.arch.persistence.room.Room.databaseBuilder(
                             context.getApplicationContext(),Database.class,"database")
-                            .addMigrations(MIGRATION_1_2,MIGRATION_2_3)
+                           // .addMigrations(MIGRATION_1_2,MIGRATION_2_3,MIGRATION_3_4)
                             .fallbackToDestructiveMigration()
                             .build();
                 }
@@ -46,5 +47,13 @@ public abstract class Database extends RoomDatabase {
 //                    "ADD COLUMN priceHotel TEXT" + "ADD COLUMN roomTypeHotel TEXT" +
 //                    "ADD COLUMN tipoHotel TEXT" + "ADD COLUMN nomeHotel TEXT");
      }
+    };
+
+    @VisibleForTesting
+    static final Migration MIGRATION_3_4 = new Migration(3,4) {
+        @Override
+        public void migrate(@NonNull SupportSQLiteDatabase database) {
+
+        }
     };
 }

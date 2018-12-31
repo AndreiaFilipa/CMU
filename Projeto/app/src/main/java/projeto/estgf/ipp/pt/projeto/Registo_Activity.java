@@ -10,6 +10,9 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 
+import projeto.estgf.ipp.pt.projeto.BD.InformacoesRegisto;
+import projeto.estgf.ipp.pt.projeto.BD.Repo;
+
 
 public class Registo_Activity extends AppCompatActivity implements View.OnClickListener {
     private Button temp;
@@ -20,8 +23,8 @@ public class Registo_Activity extends AppCompatActivity implements View.OnClickL
     private ArrayAdapter<String> originAirportsAdapter;
     private ArrayAdapter<String> destinationAirportsAdapter;
 
+    private InformacoesRegisto registo;
 
-    ProcuraCidade TextV1;
 
     EditText editT;
     AutoCompleteTextView cidade;
@@ -32,6 +35,7 @@ public class Registo_Activity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registo_);
         context = this;
+        //registo=(InformacoesRegisto) getIntent().getSerializableExtra("registo") ;
 
         aeroporto = getResources().getStringArray(R.array.airports);
         originAirportsAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item, aeroporto);
@@ -51,17 +55,20 @@ public class Registo_Activity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.buttonRegista) {
-            //mudar para onde vai o botão
-            Intent registar = new Intent(context, PesquisaActivity.class);
+            registo = new InformacoesRegisto();
+            registo.nomeUtilizador = editT.getText().toString();
+            registo.ciadadePreferencia = cidade.getText().toString();
+            registo.cidadeHabita = cidadeHabita.getText().toString();
 
-            ProcuraCidade TextV1 = new ProcuraCidade();
-            TextV1.setNome(editT.getText().toString());
-            TextV1.setCidadePref(cidade.getText().toString());
-            TextV1.setCidadeHabita(cidadeHabita.getText().toString());
+            Repo repo = new Repo(this);
+            repo.insertRegisto(registo);
 
-            registar.putExtra("Registar", TextV1);
+            Intent registar = new Intent(context, MainActivity.class);
+
+
 
             startActivity(registar);
         }
     }
+
 }
