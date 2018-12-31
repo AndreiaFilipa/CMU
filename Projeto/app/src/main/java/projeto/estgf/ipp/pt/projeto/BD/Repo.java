@@ -4,6 +4,9 @@ import android.content.Context;
 
 import java.util.List;
 
+import projeto.estgf.ipp.pt.projeto.OnGetAllInformation;
+import projeto.estgf.ipp.pt.projeto.ResultAdapterSaveVoos;
+
 public class Repo {
     private Database db;
     private InformacoesVooDAO dao;
@@ -22,8 +25,8 @@ public class Repo {
         this.context=context;
     }
 
-    public List<InformacoesVoo> getAllVoos() {
-        new getVoos(dao,db).execute();
+    public List<InformacoesVoo> getAllVoos(OnGetAllInformation info) {
+        new getVoos(dao, info).execute();
         return null;
     }
 

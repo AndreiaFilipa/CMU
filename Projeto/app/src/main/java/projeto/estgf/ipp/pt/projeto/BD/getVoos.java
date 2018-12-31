@@ -4,23 +4,25 @@ import android.os.AsyncTask;
 
 import java.util.List;
 
+import projeto.estgf.ipp.pt.projeto.OnGetAllInformation;
+import projeto.estgf.ipp.pt.projeto.ResultAdapterSaveVoos;
+
 public class getVoos extends AsyncTask<Void,Void,Void> {
 
     private final InformacoesVooDAO dao;
-    private Database db;
+    private final OnGetAllInformation info;
 
-    public getVoos(InformacoesVooDAO dao, Database db) {
+
+    public getVoos(InformacoesVooDAO dao, OnGetAllInformation info) {
         this.dao=dao;
-        this.db=db;
+        this.info=info;
     }
 
 
     @Override
     protected Void doInBackground(Void... voids) {
-
         List<InformacoesVoo> list = dao.getAllVoos();
-
-    //db.clearAllTables();
+        info.obterInformacao(list);
         return null;
     }
 }

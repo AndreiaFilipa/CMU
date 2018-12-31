@@ -35,7 +35,9 @@ private InformacoesRegisto registo;
         temp2.setOnClickListener(this);
 
         ControladoresAPI.x();
-
+        Repo y = new Repo(this);
+        //x.getAllVoos();
+        y.getAllHoteis();
 
     }
 
@@ -48,7 +50,7 @@ private InformacoesRegisto registo;
             Intent hotel = new Intent(this,HotelActivity.class);
             startActivity(hotel);
         }else if(v.getId()==R.id.buttonVooHotel){
-            Intent registo = new Intent(this,Registo_Activity.class);
+            Intent registo = new Intent(this,PesquisasGuardadas.class);
             startActivity(registo);
         }
     }
