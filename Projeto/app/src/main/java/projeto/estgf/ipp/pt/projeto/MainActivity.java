@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ControladoresAPI.x();
         Repo x = new Repo(this);
         //x.getAllVoos();
-        x.getAllHoteis();
+        //x.getAllHoteis();
 
     }
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent hotel = new Intent(this,HotelActivity.class);
             startActivity(hotel);
         }else if(v.getId()==R.id.buttonVooHotel){
-            Intent registo = new Intent(this,PesquisasGuardadas.class);
+            Intent registo = new Intent(this,MenuPesquisasGuardadas.class);
             startActivity(registo);
         }
     }

@@ -1,19 +1,17 @@
 package projeto.estgf.ipp.pt.projeto;
 
-import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import projeto.estgf.ipp.pt.projeto.BD.InformacoesVoo;
 import projeto.estgf.ipp.pt.projeto.BD.Repo;
 
-public class PesquisasGuardadas extends AppCompatActivity implements OnGetAllInformation {
+public class PesquisasGuardadasVoos extends AppCompatActivity implements OnGetAllInformation {
     private Repo repo;
     private  ResultAdapterSaveVoos resultAdapterPesquisa;
 
@@ -21,7 +19,7 @@ public class PesquisasGuardadas extends AppCompatActivity implements OnGetAllInf
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pesquisas_guardadas);
+        setContentView(R.layout.activity_pesquisas_guardadas_voos);
 
         repo= new Repo(this);
 

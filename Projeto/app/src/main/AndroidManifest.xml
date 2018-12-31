@@ -33,7 +33,9 @@
         <activity android:name=".hoteis.PesquisaHoteis" />
         <activity android:name=".hoteis.HoteisDetalhes" />
         <activity android:name=".ResultAdapterSaveVoos" />
-        <activity android:name=".PesquisasGuardadas"></activity>
+        <activity android:name=".PesquisasGuardadasVoos" />
+        <activity android:name=".MenuPesquisasGuardadas" />
+        <activity android:name=".PesquisasGuardadasHoteis"></activity>
     </application>
 
 </manifest>

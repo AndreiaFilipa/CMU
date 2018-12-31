@@ -5,6 +5,7 @@ import android.content.Context;
 import java.util.List;
 
 import projeto.estgf.ipp.pt.projeto.OnGetAllInformation;
+import projeto.estgf.ipp.pt.projeto.OnGetAllInformationHoteis;
 import projeto.estgf.ipp.pt.projeto.ResultAdapterSaveVoos;
 
 public class Repo {
@@ -25,8 +26,8 @@ public class Repo {
         return null;
     }
 
-    public List<InformacoesHotel> getAllHoteis() {
-        new getHoteis(daoHotel).execute();
+    public List<InformacoesHotel> getAllHoteis(OnGetAllInformationHoteis infoHoteis) {
+        new getHoteis(daoHotel, infoHoteis).execute();
         return null;
     }
 
