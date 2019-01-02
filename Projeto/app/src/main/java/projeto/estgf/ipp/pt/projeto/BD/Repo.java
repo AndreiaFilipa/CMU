@@ -7,6 +7,10 @@ import java.util.List;
 import projeto.estgf.ipp.pt.projeto.Voos.OnGetAllInformation;
 import projeto.estgf.ipp.pt.projeto.hoteis.OnGetAllInformationHoteis;
 
+import projeto.estgf.ipp.pt.projeto.NotificaFimRegisto;
+
+
+
 public class Repo {
     private Database db;
     private InformacoesVooDAO dao;
@@ -35,8 +39,8 @@ public class Repo {
         return null;
     }
 
-    public List<InformacoesRegisto> getAllRegistos() {
-        new getRegisto(daoRegisto,context).execute();
+    public List<InformacoesRegisto> getAllRegistos(NotificaFimRegisto notificaFimRegisto) {
+        new getRegisto(daoRegisto, notificaFimRegisto).execute();
         return null;
     }
 

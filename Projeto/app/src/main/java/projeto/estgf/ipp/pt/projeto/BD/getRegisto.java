@@ -1,33 +1,40 @@
 package projeto.estgf.ipp.pt.projeto.BD;
 
+
 import android.content.Context;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 
 import java.util.List;
 
+
 import projeto.estgf.ipp.pt.projeto.Registo.DialogRegisto;
 
-public class getRegisto extends AsyncTask<Void,Void,Void> {
+import projeto.estgf.ipp.pt.projeto.NotificaFimRegisto;
+
+
+public class getRegisto extends AsyncTask<Void,Void,List<InformacoesRegisto>> {
 
     private final InformacoesRegistoDAO daoRegisto;
-    private final Context context;
+    private final NotificaFimRegisto notificaFimRegisto;
 
-    public getRegisto(InformacoesRegistoDAO daoRegisto, Context context) {
+    public getRegisto(InformacoesRegistoDAO daoRegisto, NotificaFimRegisto notificaFimRegisto) {
         this.daoRegisto=daoRegisto;
-        this.context=context;
+        this.notificaFimRegisto=notificaFimRegisto;
     }
 
     @Override
-    protected Void doInBackground(Void... voids) {
+    protected List<InformacoesRegisto> doInBackground(Void... voids) {
 
 
         List<InformacoesRegisto> list = daoRegisto.getAllRegistos();
 
-        if(list.size()==0){
-            DialogRegisto y = new DialogRegisto();
-            y.show(((AppCompatActivity)context).getSupportFragmentManager(), "my_dialog");
-        }
-        return null;
+        return list;
+    }
+
+    @Override
+    protected void onPostExecute(List<InformacoesRegisto> informacoesRegistos) {
+        super.onPostExecute(informacoesRegistos);
+
+        notificaFimRegisto.fimPesquisa(informacoesRegistos);
     }
 }

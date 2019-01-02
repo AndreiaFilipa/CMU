@@ -3623,5 +3623,8 @@
     <string name="data_check_in">Data check-in</string>
     <string name="pesquisar">Pesquisar</string>
     <string name="name">Nome</string>
+    <string name="channel_name">chanel</string>
+    <string name="channel_description">chanel</string>
+    <string name="receber_notifica_es">Receber Notificações</string>
     <string name="ver_mapa">Ver mapa</string>
 </resources>

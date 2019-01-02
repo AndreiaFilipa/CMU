@@ -3,7 +3,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/imgmenu">
 
-
     <Button
         android:id="@+id/buttonVoo"
         android:layout_width="wrap_content"

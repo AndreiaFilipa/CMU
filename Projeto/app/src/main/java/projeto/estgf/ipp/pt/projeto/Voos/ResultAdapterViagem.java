@@ -81,6 +81,7 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
             hora1.setText(temp.getFlightSegment().getArrival().getAt());
 
 
+
             resultViewHolder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position) {
