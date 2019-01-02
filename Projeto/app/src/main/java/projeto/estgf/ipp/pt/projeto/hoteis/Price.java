@@ -10,7 +10,7 @@ public class Price implements Serializable {
 
     private String total;
 
-    private List<Tax> taxes = null;
+   // private List<Tax> taxes = null;
 
     private Variations variations;
 
@@ -36,7 +36,7 @@ public class Price implements Serializable {
     }
 
 
-    public List<Tax> getTaxes() {
+ /*   public List<Tax> getTaxes() {
         return taxes;
     }
 
@@ -44,7 +44,7 @@ public class Price implements Serializable {
     public void setTaxes(List<Tax> taxes) {
         this.taxes = taxes;
     }
-
+*/
 
     public Variations getVariations() {
         return variations;

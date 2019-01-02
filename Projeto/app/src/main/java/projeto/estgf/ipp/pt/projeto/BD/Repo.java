@@ -4,6 +4,9 @@ import android.content.Context;
 
 import java.util.List;
 
+import projeto.estgf.ipp.pt.projeto.MainActivity;
+import projeto.estgf.ipp.pt.projeto.NotificaFimRegisto;
+import projeto.estgf.ipp.pt.projeto.Notificacao;
 import projeto.estgf.ipp.pt.projeto.OnGetAllInformation;
 import projeto.estgf.ipp.pt.projeto.ResultAdapterSaveVoos;
 
@@ -35,8 +38,8 @@ public class Repo {
         return null;
     }
 
-    public List<InformacoesRegisto> getAllRegistos() {
-        new getRegisto(daoRegisto,context).execute();
+    public List<InformacoesRegisto> getAllRegistos(NotificaFimRegisto notificaFimRegisto) {
+        new getRegisto(daoRegisto, notificaFimRegisto).execute();
         return null;
     }
 

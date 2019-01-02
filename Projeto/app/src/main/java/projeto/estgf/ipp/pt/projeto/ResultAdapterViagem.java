@@ -72,7 +72,10 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
             hora.setText(temp.getFlightSegment().getDeparture().getAt());
             viagem.setText(String.format("%s-%s", temp.getFlightSegment().getDeparture().getIataCode(), temp.getFlightSegment().getArrival().getIataCode()));
             duracao.setText(temp.getFlightSegment().getDuration());
-        TextView hora1 = resultViewHolder.hora1;hora1.setVisibility(View.VISIBLE);hora1.setText(temp.getFlightSegment().getArrival().getAt());
+            TextView hora1 = resultViewHolder.hora1;
+            hora1.setVisibility(View.VISIBLE);
+            hora1.setText(temp.getFlightSegment().getArrival().getAt());
+
         if(b) {
             TextView regresso=resultViewHolder.regresso;
             /*TextView companhia1 = resultViewHolder.companhia1;
