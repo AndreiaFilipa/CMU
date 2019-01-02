@@ -57,11 +57,15 @@ public class ResultAdapterHoteis extends RecyclerView.Adapter<ResultViewHolderHo
         nome.setText(temp.getHotel().getName());
         chainCode.setText(temp.getHotel().getChainCode());
         offers= (ArrayList<Offer>) temp.getOffers();
+
         informacoesHotel= new InformacoesHotel();
 
         informacoesHotel.tipoHotel=temp.getHotel().getType();
         informacoesHotel.nomeHotel=temp.getHotel().getName();
         informacoesHotel.chainCodeHotel=temp.getHotel().getChainCode();
+
+        informacoesHotel.latitude=temp.getHotel().getLatitude();
+        informacoesHotel.longitude=temp.getHotel().getLongitude();
 
             resultViewHolder.setItemClickListener(new ItemClickListener() {
                 @Override
