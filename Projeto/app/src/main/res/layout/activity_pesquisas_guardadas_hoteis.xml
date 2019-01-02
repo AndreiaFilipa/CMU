@@ -4,28 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="projeto.estgf.ipp.pt.projeto.hoteis.HoteisDetalhes">
+    tools:context=".PesquisasGuardadasHoteis">
 
     <FrameLayout
-        android:id="@+id/frameLayoutHotel"
-        android:layout_height="wrap_content"
+        android:id="@+id/frameLayoutPesquisasHoteis"
+        android:layout_height="match_parent"
         android:layout_width="match_parent">
 
         <android.support.v7.widget.RecyclerView
-            android:id="@+id/recyclerViewHotel"
+            android:id="@+id/recyclerViewPesquisasHoteis"
             android:scrollbars="vertical"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_width="match_parent"/>
 
     </FrameLayout>
-
-    <Button
-        android:id="@+id/buttonMapa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/ver_mapa" />
-
 
 </LinearLayout>

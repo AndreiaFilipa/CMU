@@ -3,12 +3,8 @@ package projeto.estgf.ipp.pt.projeto;
 import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -18,6 +14,7 @@ import java.util.List;
 import projeto.estgf.ipp.pt.projeto.APIControllers.ControladoresAPI;
 import projeto.estgf.ipp.pt.projeto.BD.InformacoesRegisto;
 import projeto.estgf.ipp.pt.projeto.BD.Repo;
+import projeto.estgf.ipp.pt.projeto.hoteis.SetupMaps;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, DialogRegistoInterface, NotificaFimRegisto,SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -44,6 +41,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         temp2.setOnClickListener(this);
 
         ControladoresAPI.x();
+        //Repo y = new Repo(this);
+        //x.getAllVoos();
+        //x.getAllHoteis();
+
 
     }
 
@@ -90,7 +91,7 @@ public void VerificaPreferencias(){
             Intent hotel = new Intent(this,HotelActivity.class);
             startActivity(hotel);
         }else if(v.getId()==R.id.buttonVooHotel){
-            Intent registo = new Intent(this,PesquisasGuardadas.class);
+            Intent registo = new Intent(this,MenuPesquisasGuardadas.class);
             startActivity(registo);
         }
     }
