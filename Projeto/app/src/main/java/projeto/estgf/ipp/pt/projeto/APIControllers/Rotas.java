@@ -1,8 +1,8 @@
 package projeto.estgf.ipp.pt.projeto.APIControllers;
 
 import projeto.estgf.ipp.pt.projeto.hoteis.DataHoteis;
-import projeto.estgf.ipp.pt.projeto.Data;
-import projeto.estgf.ipp.pt.projeto.Token;
+import projeto.estgf.ipp.pt.projeto.Voos.Data;
+import projeto.estgf.ipp.pt.projeto.Voos.Token;
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;

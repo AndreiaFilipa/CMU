@@ -1,13 +1,12 @@
 package projeto.estgf.ipp.pt.projeto.BD;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 
 import java.util.List;
 
-import projeto.estgf.ipp.pt.projeto.DialogRegisto;
+import projeto.estgf.ipp.pt.projeto.Registo.DialogRegisto;
 
 public class getRegisto extends AsyncTask<Void,Void,Void> {
 

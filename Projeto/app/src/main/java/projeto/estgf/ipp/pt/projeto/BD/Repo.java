@@ -4,9 +4,8 @@ import android.content.Context;
 
 import java.util.List;
 
-import projeto.estgf.ipp.pt.projeto.OnGetAllInformation;
-import projeto.estgf.ipp.pt.projeto.OnGetAllInformationHoteis;
-import projeto.estgf.ipp.pt.projeto.ResultAdapterSaveVoos;
+import projeto.estgf.ipp.pt.projeto.Voos.OnGetAllInformation;
+import projeto.estgf.ipp.pt.projeto.hoteis.OnGetAllInformationHoteis;
 
 public class Repo {
     private Database db;
@@ -55,5 +54,13 @@ public class Repo {
 
     public void clear(){
         this.db.clearAllTables();
+    }
+
+    public void deleteInformacoesVoo(InformacoesVoo voo) {
+        new DeletePesquisasVoos(dao).execute(voo);
+    }
+
+    public void deleteInformacoesHotel(InformacoesHotel hotel) {
+        new DeletePesquisasHoteis(daoHotel).execute(hotel);
     }
 }

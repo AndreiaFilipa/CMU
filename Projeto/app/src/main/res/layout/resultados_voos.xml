@@ -44,45 +44,14 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viagem"/>
 
-    <TextView
-        android:text="Chegada"
-        android:id="@+id/regresso"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/duracao"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/companhia1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/regresso"
-        android:layout_toRightOf="@+id/regresso"
-        android:layout_below="@+id/duracao"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/hora1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/regresso"
+        android:layout_below="@+id/duracao"
         android:visibility="gone"/>
 
-    <TextView
-        android:id="@+id/viagem1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/hora1"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/duracao1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/viagem1"
-        android:visibility="gone"/>
 
 
 </RelativeLayout>

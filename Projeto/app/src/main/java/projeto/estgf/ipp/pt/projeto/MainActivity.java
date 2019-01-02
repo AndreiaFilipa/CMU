@@ -9,7 +9,11 @@ import android.widget.Button;
 import projeto.estgf.ipp.pt.projeto.APIControllers.ControladoresAPI;
 import projeto.estgf.ipp.pt.projeto.BD.InformacoesRegisto;
 import projeto.estgf.ipp.pt.projeto.BD.Repo;
-import projeto.estgf.ipp.pt.projeto.hoteis.SetupMaps;
+import projeto.estgf.ipp.pt.projeto.Pesquisas.MenuPesquisasGuardadas;
+import projeto.estgf.ipp.pt.projeto.Registo.DialogRegistoInterface;
+import projeto.estgf.ipp.pt.projeto.Registo.Registo_Activity;
+import projeto.estgf.ipp.pt.projeto.Voos.Main2Activity;
+import projeto.estgf.ipp.pt.projeto.hoteis.HotelActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener,DialogRegistoInterface {
 

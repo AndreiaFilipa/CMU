@@ -4,8 +4,7 @@ import android.os.AsyncTask;
 
 import java.util.List;
 
-import projeto.estgf.ipp.pt.projeto.OnGetAllInformation;
-import projeto.estgf.ipp.pt.projeto.ResultAdapterSaveVoos;
+import projeto.estgf.ipp.pt.projeto.Voos.OnGetAllInformation;
 
 public class getVoos extends AsyncTask<Void,Void,Void> {
 

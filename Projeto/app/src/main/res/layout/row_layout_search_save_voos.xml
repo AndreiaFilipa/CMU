@@ -28,6 +28,7 @@
         android:gravity="center_horizontal"
         android:layout_below="@+id/precoSave"/>
 
+
     <TextView
         android:text="Partida"
         android:id="@+id/partidaSave"
@@ -63,46 +64,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/viagemSave"/>
 
-    <TextView
-        android:text="Chegada"
-        android:id="@+id/regressoSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/duracaoSave"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/companhia1Save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@+id/regressoSave"
-        android:layout_toRightOf="@+id/regressoSave"
-        android:layout_below="@+id/duracaoSave"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:visibility="gone"/>
 
     <TextView
         android:id="@+id/hora1Save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/regressoSave"
+        android:layout_below="@+id/duracaoSave"
         android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/viagem1Save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/hora1Save"
-        android:visibility="gone"/>
-
-    <TextView
-        android:id="@+id/duracao1Save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/viagem1Save"
-        android:visibility="gone"/>
-
 
 
 </RelativeLayout>

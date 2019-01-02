@@ -1,6 +1,7 @@
 package projeto.estgf.ipp.pt.projeto.BD;
 
 import android.arch.persistence.room.Dao;
+import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
 import android.arch.persistence.room.Query;
@@ -16,4 +17,7 @@ public interface InformacoesVooDAO {
 
     @Query("SELECT * FROM informacoesvoo")
     public List<InformacoesVoo> getAllVoos();
+
+    @Delete
+    public void delete(InformacoesVoo voo);
 }

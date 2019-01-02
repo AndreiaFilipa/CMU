@@ -19,10 +19,9 @@ public class InformacoesVoo implements Serializable {
     public String fluxoViagem;
     public String duracao;
 
-    public String companhiaV;
     public String horaV;
-    public String fluxoViagemV;
-    public String duracaoV;
+    public String idaVolta;
+
 
 }
 

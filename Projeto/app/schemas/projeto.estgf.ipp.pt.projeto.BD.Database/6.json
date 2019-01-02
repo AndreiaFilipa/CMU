@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 6,
-    "identityHash": "469ace08b78b2cd7c399f9a2ee9b610e",
+    "identityHash": "32d1e4049ff42989c951f0f93fec26e1",
     "entities": [
       {
         "tableName": "InformacoesVoo",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `tipo` TEXT, `preco` TEXT, `companhia` TEXT, `hora` TEXT, `fluxoViagem` TEXT, `duracao` TEXT, `companhiaV` TEXT, `horaV` TEXT, `fluxoViagemV` TEXT, `duracaoV` TEXT, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `tipo` TEXT, `preco` TEXT, `companhia` TEXT, `hora` TEXT, `fluxoViagem` TEXT, `duracao` TEXT, `horaV` TEXT, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -51,26 +51,8 @@
             "notNull": false
           },
           {
-            "fieldPath": "companhiaV",
-            "columnName": "companhiaV",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
             "fieldPath": "horaV",
             "columnName": "horaV",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "fluxoViagemV",
-            "columnName": "fluxoViagemV",
-            "affinity": "TEXT",
-            "notNull": false
-          },
-          {
-            "fieldPath": "duracaoV",
-            "columnName": "duracaoV",
             "affinity": "TEXT",
             "notNull": false
           }
@@ -187,7 +169,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"469ace08b78b2cd7c399f9a2ee9b610e\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"32d1e4049ff42989c951f0f93fec26e1\")"
     ]
   }
 }

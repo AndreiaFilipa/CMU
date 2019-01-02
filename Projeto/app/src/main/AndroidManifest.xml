@@ -19,32 +19,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".VooHotelActivity" />
-        <activity android:name=".HotelActivity" />
+        <activity android:name=".hoteis.HotelActivity" />
         <activity
-            android:name=".Main2Activity"
+            android:name=".Voos.Main2Activity"
             android:label="@string/title_activity_main2"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".PesquisaActivity" />
+        <activity android:name=".Voos.PesquisaActivity" />
         <activity android:name=".Voo" />
-        <activity android:name=".Registo_Activity" />
+        <activity android:name=".Registo.Registo_Activity" />
         <activity android:name=".hoteis.PesquisaHoteis" />
         <activity android:name=".hoteis.HoteisDetalhes" />
-        <activity android:name=".VoosDetalhes" />
+        <activity android:name=".Voos.VoosDetalhes" />
         <activity android:name=".hoteis.PesquisaHoteis" />
         <activity android:name=".hoteis.HoteisDetalhes" />
-        <activity android:name=".PesquisaVooHotel" />
-        <activity android:name=".Registo_Activity" />
+        <activity android:name=".Registo.Registo_Activity" />
         <activity android:name=".hoteis.PesquisaHoteis" />
         <activity android:name=".hoteis.HoteisDetalhes" />
-        <activity android:name=".ResultAdapterSaveVoos" />
-        <activity android:name=".PesquisasGuardadasVoos" />
-        <activity android:name=".MenuPesquisasGuardadas" />
-        <activity android:name=".PesquisasGuardadasHoteis" />
+        <activity android:name=".Pesquisas.ResultAdapterSaveVoos" />
+        <activity android:name=".Pesquisas.PesquisasGuardadasVoos" />
+        <activity android:name=".Pesquisas.MenuPesquisasGuardadas" />
+        <activity android:name=".Pesquisas.PesquisasGuardadasHoteis" />
 
         <meta-data
             android:name="com.google.android.maps.v2.API_KEY"
-            android:value="AIzaSyA7mUE_huL6FZ4dB71Nv99FKBz2dayECkE" />
+            android:value="AIzaSyBJXOZKyRCuv9vctWmIJX6S8EyTB-OHrVM" />
 
         <activity android:name=".hoteis.SetupMaps"></activity>
     </application>

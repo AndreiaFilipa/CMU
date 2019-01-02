@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 
 import java.util.Calendar;
 
-import projeto.estgf.ipp.pt.projeto.Token;
+import projeto.estgf.ipp.pt.projeto.Voos.Token;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

@@ -4,7 +4,7 @@ import android.os.AsyncTask;
 
 import java.util.List;
 
-import projeto.estgf.ipp.pt.projeto.OnGetAllInformationHoteis;
+import projeto.estgf.ipp.pt.projeto.hoteis.OnGetAllInformationHoteis;
 
 public class getHoteis extends AsyncTask<Void,Void,Void> {
 
