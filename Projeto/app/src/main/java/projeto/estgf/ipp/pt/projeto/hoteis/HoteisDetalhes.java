@@ -12,11 +12,12 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 import projeto.estgf.ipp.pt.projeto.BD.InformacoesHotel;
+import projeto.estgf.ipp.pt.projeto.BD.InformacoesVoo;
 import projeto.estgf.ipp.pt.projeto.BD.Repo;
 import projeto.estgf.ipp.pt.projeto.R;
 import projeto.estgf.ipp.pt.projeto.SaveDialogListener;
 
-public abstract class HoteisDetalhes extends AppCompatActivity implements SaveDialogListener, View.OnClickListener {
+public class HoteisDetalhes extends AppCompatActivity implements SaveDialogListener, View.OnClickListener {
     private ArrayList<Offer> list;
     private InformacoesHotel hotel;
 
@@ -45,6 +46,11 @@ public abstract class HoteisDetalhes extends AppCompatActivity implements SaveDi
     public void onDialogSaveClick() {
         Repo repo = new Repo(this);
         repo.insertHoteis(hotel);
+    }
+
+    @Override
+    public void onDialogSaveClick(InformacoesVoo vooI) {
+
     }
 
     @Override
