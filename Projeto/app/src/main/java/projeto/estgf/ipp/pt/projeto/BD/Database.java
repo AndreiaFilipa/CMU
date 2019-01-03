@@ -7,7 +7,7 @@ import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 
-@android.arch.persistence.room.Database(entities = {InformacoesVoo.class, InformacoesHotel.class, InformacoesRegisto.class},version = 8)
+@android.arch.persistence.room.Database(entities = {InformacoesVoo.class, InformacoesHotel.class, InformacoesRegisto.class},version = 10)
 public abstract class Database extends RoomDatabase {
 
     public abstract InformacoesVooDAO dao();

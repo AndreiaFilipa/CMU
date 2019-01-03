@@ -1,18 +1,18 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 1,
-    "identityHash": "b0830a44de71a3e3a5cbc4856a515a7d",
+    "version": 9,
+    "identityHash": "d7dcd7178d00efd1f507102af744e559",
     "entities": [
       {
         "tableName": "InformacoesVoo",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `tipo` TEXT, `preco` TEXT, `companhia` TEXT, `hora` TEXT, `fluxoViagem` TEXT, `duracao` TEXT, `horaV` TEXT, `idaVolta` TEXT NOT NULL, PRIMARY KEY(`id`, `idaVolta`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT, `tipo` TEXT, `preco` TEXT, `companhia` TEXT, `hora` TEXT, `fluxoViagem` TEXT, `duracao` TEXT, `horaV` TEXT, `idaVolta` TEXT, PRIMARY KEY(`id`, `idaVolta`))",
         "fields": [
           {
             "fieldPath": "id",
             "columnName": "id",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           },
           {
             "fieldPath": "tipo",
@@ -60,7 +60,7 @@
             "fieldPath": "idaVolta",
             "columnName": "idaVolta",
             "affinity": "TEXT",
-            "notNull": true
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -176,7 +176,7 @@
     ],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"b0830a44de71a3e3a5cbc4856a515a7d\")"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"d7dcd7178d00efd1f507102af744e559\")"
     ]
   }
 }

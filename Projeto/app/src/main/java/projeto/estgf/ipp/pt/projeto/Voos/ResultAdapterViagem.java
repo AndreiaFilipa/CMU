@@ -85,6 +85,7 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
             resultViewHolder.setItemClickListener(new ItemClickListener() {
             @Override
             public void onClick(View view, int position) {
+
                 vooInfo.idaVolta= (String) VoosIda.getText();
                 vooInfo.companhia=temp.getFlightSegment().getCarrierCode();
                 vooInfo.hora=temp.getFlightSegment().getDeparture().getAt();
@@ -93,6 +94,7 @@ public class ResultAdapterViagem extends RecyclerView.Adapter<ResultViewHolderVi
                 vooInfo.horaV=temp.getFlightSegment().getArrival().getAt();
                 GuardarDialog x = new GuardarDialog();
 
+                x.setVoo(vooInfo);
                 x.show(((AppCompatActivity)context).getSupportFragmentManager(),"guardar_bd");
             }
         });

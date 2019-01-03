@@ -70,8 +70,8 @@ public class Notificacao extends IntentService implements NotificaFimRegisto {
             NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(this, CHANNEL_ID)
                     .setSmallIcon(R.drawable.ic_launcher_background)
                     .setContentTitle("Oportunidade")
-                    .setContentText("Oportunidade de reserva num hotel no seu destino de preferência")
-                    .setStyle(new NotificationCompat.BigTextStyle().bigText("Oportunidade"))
+                    .setContentText("Oportunidade")
+                    .setStyle(new NotificationCompat.BigTextStyle().bigText("Oportunidade de reserva num hotel no seu destino de preferência"))
                     .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
             Intent intent= new Intent(this, PesquisaHoteis.class);

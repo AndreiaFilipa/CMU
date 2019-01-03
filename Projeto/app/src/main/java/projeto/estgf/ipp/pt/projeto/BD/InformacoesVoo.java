@@ -7,9 +7,8 @@ import android.support.annotation.NonNull;
 
 import java.io.Serializable;
 
-@Entity
+@Entity(primaryKeys = {"id","idaVolta"})
 public class InformacoesVoo implements Serializable {
-    @PrimaryKey
     @NonNull
     public String id;
     public String tipo;
@@ -20,8 +19,8 @@ public class InformacoesVoo implements Serializable {
     public String duracao;
 
     public String horaV;
+    @NonNull
     public String idaVolta;
-
 
 }
 

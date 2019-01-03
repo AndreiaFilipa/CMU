@@ -16,7 +16,7 @@ import projeto.estgf.ipp.pt.projeto.BD.Repo;
 import projeto.estgf.ipp.pt.projeto.R;
 import projeto.estgf.ipp.pt.projeto.SaveDialogListener;
 
-public class HoteisDetalhes extends AppCompatActivity implements SaveDialogListener, View.OnClickListener {
+public abstract class HoteisDetalhes extends AppCompatActivity implements SaveDialogListener, View.OnClickListener {
     private ArrayList<Offer> list;
     private InformacoesHotel hotel;
 

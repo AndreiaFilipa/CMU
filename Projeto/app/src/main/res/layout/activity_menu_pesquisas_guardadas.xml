@@ -11,7 +11,8 @@
         android:layout_alignStart="@+id/buttonPesqHoteis"
         android:layout_alignParentTop="true"
         android:layout_marginTop="179dp"
-        android:text="Pesquisas guardadas voos" />
+        android:text="Pesquisas guardadas voos"
+        android:layout_alignLeft="@+id/buttonPesqHoteis" />
 
 
     <Button

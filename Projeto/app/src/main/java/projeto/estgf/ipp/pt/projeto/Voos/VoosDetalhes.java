@@ -37,7 +37,12 @@ private InformacoesVoo voo;
 
     @Override
     public void onDialogSaveClick() {
+
+    }
+
+    @Override
+    public void onDialogSaveClick(InformacoesVoo vooI) {
         Repo repo = new Repo(this);
-        repo.insert(voo);
+        repo.insert(vooI);
     }
 }
