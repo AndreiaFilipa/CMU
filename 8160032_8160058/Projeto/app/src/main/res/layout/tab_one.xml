@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+
+
+    <AutoCompleteTextView
+
+        android:hint="@string/originLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/autoCompleteTextViewAirportsOriginVoo"
+        android:completionThreshold="1" />
+
+
+
+
+    <AutoCompleteTextView
+        android:hint="@string/destinationLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/autoCompleteTextViewAirportsDestinationVoo"
+        android:completionThreshold="1"
+        android:layout_below="@+id/autoCompleteTextViewAirportsOriginVoo"/>
+
+
+
+
+    <EditText
+        android:hint="@string/data_de_partida"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editTextDepartureDateVoo"
+        android:layout_below="@+id/autoCompleteTextViewAirportsDestinationVoo"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_toStartOf="@+id/buttonDateDialogDepartureVoo"
+        android:layout_toLeftOf="@+id/buttonDateDialogDepartureVoo" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setDateButtonLabel"
+        android:id="@+id/buttonDateDialogDepartureVoo"
+        android:layout_alignBottom="@+id/editTextDepartureDateVoo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+
+    <EditText
+        android:hint="@string/data_de_regresso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editTextArriveDateVoo"
+        android:layout_below="@+id/editTextDepartureDateVoo"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_toStartOf="@+id/buttonDateDialogArriveVoo"
+        android:layout_toLeftOf="@+id/buttonDateDialogArriveVoo"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setDateButtonLabel"
+        android:id="@+id/buttonDateDialogArriveVoo"
+        android:layout_alignBottom="@+id/editTextArriveDateVoo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/buttonDateDialogDepartureVoo"/>
+
+
+
+    <EditText
+        android:id="@+id/passageiros"
+        android:hint="@string/passageiros"
+        android:inputType="numberSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextArriveDateVoo"/>
+
+    <Button
+        android:id="@+id/buttonExecute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/passageiros"
+        android:layout_centerHorizontal="true"
+        android:text="@string/button_run"
+        />
+
+
+</RelativeLayout>

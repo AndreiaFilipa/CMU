@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:ems="10"
+        android:id="@+id/editTextDepartureDate"
+        android:layout_below="@+id/autoCompleteTextViewAirportsDestination"
+        android:layout_alignLeft="@+id/autoCompleteTextViewAirportsDestination"
+        android:layout_alignStart="@+id/autoCompleteTextViewAirportsDestination"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:layout_toStartOf="@+id/buttonDateDialog"
+        android:layout_toLeftOf="@+id/buttonDateDialog"
+        android:hint="@string/departureDateLabel"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/setDateButtonLabel"
+        android:id="@+id/buttonDateDialog"
+        android:layout_alignBottom="@+id/editTextDepartureDate"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/autoCompleteTextViewAirportsOrigin"
+        android:hint="@string/originLabel"
+        android:completionThreshold="1" />
+
+    <AutoCompleteTextView
+        android:hint="@string/destinationLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/autoCompleteTextViewAirportsDestination"
+        android:layout_below="@+id/autoCompleteTextViewAirportsOrigin"
+        android:completionThreshold="1"
+        />
+
+    <EditText
+        android:id="@+id/passageiros_tabtwo"
+        android:hint="@string/passageiros"
+        android:inputType="numberSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextDepartureDate"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_run"
+        android:id="@+id/buttonExecuteIda"
+        android:layout_below="@+id/passageiros_tabtwo"
+        android:layout_centerHorizontal="true" />
+
+
+</RelativeLayout>

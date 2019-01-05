@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tipoSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/idResultadoSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tipoSave"/>
+
+    <TextView
+        android:id="@+id/precoSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idResultadoSave"/>
+
+    <TextView
+
+        android:id="@+id/voosIdaSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/precoSave"/>
+
+
+    <TextView
+        android:text="Partida"
+        android:id="@+id/partidaSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/voosIdaSave"/>
+
+    <TextView
+        android:id="@+id/companhiaSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/partidaSave"
+        android:layout_toRightOf="@+id/partidaSave"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/voosIdaSave"/>
+
+    <TextView
+        android:id="@+id/horaSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/partidaSave"/>
+
+    <TextView
+        android:id="@+id/viagemSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horaSave"/>
+
+    <TextView
+        android:id="@+id/duracaoSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viagemSave"/>
+
+
+    <TextView
+        android:id="@+id/hora1Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/duracaoSave"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>
