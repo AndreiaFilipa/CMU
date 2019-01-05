@@ -27,7 +27,7 @@ import projeto.estgf.ipp.pt.projeto.hoteis.HotelActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, DialogRegistoInterface, NotificaFimRegisto,SharedPreferences.OnSharedPreferenceChangeListener {
 
-
+    private static int id = 1239;
     private InformacoesRegisto registo;
     private SharedPreferences settings;
 
@@ -62,33 +62,44 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onResume();
 
         settings= PreferenceManager.getDefaultSharedPreferences(this);
-       VerificaPreferencias();
-            settings.registerOnSharedPreferenceChangeListener(this);
+        VerificaPreferencias();
+        settings.registerOnSharedPreferenceChangeListener(this);
     }
-public void VerificaPreferencias(){
-    boolean temp = settings.getBoolean("notificacao",true);
+    public void VerificaPreferencias(){
+        boolean temp = settings.getBoolean("notificacao",true);
 
-    if(temp){
-        //if(!isMyServiceRunning()){
-        LancarServicoNotificao();
-    }else{
-        PesquisaAutomatica pesquisaAutomatica = new PesquisaAutomatica(this);
-        pesquisaAutomatica.execute();
+        if(temp){
+            //if(!isMyServiceRunning()){
+            LancarServicoNotificao();
+        }else{
+            // PesquisaAutomatica pesquisaAutomatica = new PesquisaAutomatica(this);
+            // pesquisaAutomatica.execute();
+
+            Intent intent = new Intent(this, Notificacao.class);
+            //context.stopService(intent);
+
+
+            PendingIntent pendingIntent = PendingIntent.getService(this,
+                    id, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+
+            pendingIntent.cancel();
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+            alarmManager.cancel(pendingIntent);
+        }
     }
-}
 
     public void LancarServicoNotificao(){
 
         Intent notificacao = new Intent(this, Notificacao.class);
         notificacao.putExtra("start","start");
-        PendingIntent pendingIntent = PendingIntent.getService(this, 0, notificacao, 0);
+        PendingIntent pendingIntent = PendingIntent.getService(this, id, notificacao, 0);
 
         Calendar cal = Calendar.getInstance();
         cal.set(Calendar.HOUR_OF_DAY,11);
         cal.set(Calendar.MINUTE,20);
 
         AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
-        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,cal.getTimeInMillis(),86400, pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP,cal.getTimeInMillis(),86400000, pendingIntent);
     }
 
     @Override
