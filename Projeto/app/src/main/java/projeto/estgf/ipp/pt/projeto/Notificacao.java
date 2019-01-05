@@ -34,7 +34,7 @@ public class Notificacao extends IntentService implements NotificaFimRegisto {
      *
      */
     public Notificacao() {
-        super("merda");
+        super("oportunidade");
     }
 
 
